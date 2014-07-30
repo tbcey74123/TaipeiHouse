@@ -1,0 +1,111 @@
+/*Slides Start*/
+#Slide{
+    background-image: url('pic/pic1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height:300px;
+    border-bottom: 5px double black;
+    opacity: 1;
+    border-radius: 10px;
+}
+
+#pic_selector{
+    width:400px;
+    height:18px;
+    position:relative;
+    top: 282px;
+    margin:0 auto;
+    background-color: rgba(230,230,230,0);
+    text-align:center;
+    
+}
+
+#pic_selector li {
+    display: inline;
+    margin: 0 10px;
+    opacity: 0;
+}
+
+#pic_selector li button {
+    height:8px;
+    width:8px;
+    border:0;
+    padding:0;
+    background:transparent;
+    color:transparent;
+    outline:none;
+    line-height:0;
+    cursor:pointer;
+}
+
+#pic_selector li button::before{
+    content:"";
+    height:8px;
+    width:8px;
+    padding:0;
+    border:0;
+    border-radius:8px;
+    -webkit-border-radius:8px;
+    background:black;
+    display:inline-block;
+}
+/*Slides End*/
+
+/*Hot Start*/
+#hot {
+    //height: 800px;   
+}
+/*Hot End*/
+/*Bottom Start*/
+#bottom {
+    border-top:5px double black;
+    height: 100px;
+    position: relative;
+    bottom: -800px;
+}
+/*Bottom End*/
+
+/*Animatin for Chrome, Safari, Opera */
+@-webkit-keyframes Sshow {
+    from {background-color: rgba(230,230,230,0);}
+    to {background-color: rgba(230,230,230,0.7);}
+}
+@-webkit-keyframes Shide {
+    from {background-color: rgba(230,230,230,0.7);}
+    to {background-color: rgba(230,230,230,0);}
+}
+@-webkit-keyframes CurrentDotshow {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@-webkit-keyframes Dotshow {
+    from {opacity: 0;}
+    to {opacity: 0.4;}
+}
+@-webkit-keyframes Dothide {
+    from {opacity: 0.4;}
+    to {opacity: 0;}
+}
+
+/*Standard Syntax*/
+@keyframes Sshow {
+    from {background-color: rgba(230,230,230,0);}
+    to {background-color: rgba(230,230,230,0.7);}
+}
+@keyframes Shide {
+    from {background-color: rgba(230,230,230,0.7);}
+    to {background-color: rgba(230,230,230,0);}
+}
+@keyframes CurrentDotshow {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes Dotshow {
+    from {opacity: 0;}
+    to {opacity: 0.4;}
+}
+@keyframes Dothide {
+    from {opacity: 0.4;}
+    to {opacity: 0;}
+}

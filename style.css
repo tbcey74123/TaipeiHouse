@@ -1,0 +1,161 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    //background-image: url('pic/background-2.png');
+	background-color: black;
+    font-family: 標楷體;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a{
+    text-decoration: none;
+     color: #AAA;
+}
+
+/*Start*/
+.main-menu   {
+    display:list-item;
+    //border-color:#888888;
+    //background-color:#444444;
+    text-align:center;
+    margin:auto;
+    padding-bottom: 5px;
+    //border-bottom: 1px solid white;
+}
+#top {
+    width: 900px;
+    height: 100px;
+    margin: 0 auto 50px;
+    //background-color: grey;
+    text-align: center;
+    //color: #AAA;
+    border-bottom: 10px;
+}
+#div_page_selection {
+    position: relative;
+    width:900px;
+    margin:0 auto;
+    top: 40px;
+    //border-bottom: 1px solid white;
+    background-image: url('pic/line-2.png');
+    background-repeat: no-repeat;
+    background-position: center    26px;
+}
+#ul_page_selection li{
+    //font-size: 2em;
+    display: inline;
+    padding-bottom: 0px;
+    margin:0px 15px;
+}
+/*#AboutMe {
+    background-image: url('pic/main-menu-button-about-me.png');
+    height: 40px;
+    width: 150px;
+}*/
+
+#main {
+    width: 900px;
+    //height: 1300px;
+    margin:0 auto;
+    background-color: rgba(90,0,173,0.3);
+    border-radius: 10px;
+    //border: 1px solid white;
+}
+
+#business-selector{
+    padding: 50px 0 0 30px;
+    text-align: center;
+}
+
+#main li{
+    display: inline;
+    color: white;
+    font-size: 20px;
+    padding: 0 20px;
+     
+}
+
+.onselect{   
+}
+#form {
+    position:relative;
+    color: white;
+    font-size: 20px;
+    padding: 50px 0 0 212px;
+    margin: 0 auto;
+}
+select {
+    text-align: center;
+}
+
+#ps {
+    font-size: 15px;
+    color: red;
+}
+
+#reset {
+    position: relative;
+    left:10px;
+}
+/*Hot start*/
+#hot {
+    font-size:20px;
+    padding:20px 0 0 30px;
+}
+#hot a{
+    color:red;
+}
+#hot .right{
+    position:relative;
+    left:750px;
+}
+/*Hot End*/
+/*Bottom Start*/
+#bottom {
+    border-top:5px double white;
+    height: 100px;
+    
+}
+/*Bottom End*/
