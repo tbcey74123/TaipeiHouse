@@ -1,5 +1,35 @@
 #house_info{
-    color:red;
-    font-size:20px;
-    padding: 40px 0 40px 60px;
+	height: 200px;
+    	color:red;
+   	font-size:20px;
+   	padding: 40px 0 40px 20px;
+}
+
+#pic_div {
+	position: relative;
+	top: -100px;
+	left: 500px;
+}
+#pic_display {
+	position: relative;
+	bottom: 6px;
+	padding-top: 10px;
+	text-align: center;
+}
+
+#thumbnail {
+	width: 900px;
+	height: 70px;
+	background-color:red ;
+}
+
+#thumbnail li{
+	display: inline;
+	list-style-type: none;
+}
+
+#thumbnail img{
+	width: 80px;
+	height: 70px;
+	padding: 0 5px;
 }

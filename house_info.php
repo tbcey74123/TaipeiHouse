@@ -42,13 +42,29 @@
 	<p>建物面積：<?php echo $row[4];?></p>
 	<p>地段：<?php echo $row[5];?></p>
 	<p>地坪：<?php echo $row[6];?></p>
+	<div id="pic_div">
+		<img id="pic" src="">
 	</div>
-        <div id="bottom">
-            
-        </div>
+	</div>
+	<div id="pic_display">
+		<div id="thumbnail">
+			<ul onclick="changePic_houses(event.target);">
+			<?php 
+				$location = $_SERVER['DOCUMENT_ROOT']."/pic/houses/case-".$id."/";
+				$i = 1;
+				
+				while(file_exists($location."pic".$i.".jpg")){
+					echo "<li><img src='/pic/houses/case-".$id."/pic".$i.".jpg' /></li>";
+					$i++;
+				}
+			?>
+			</ul>
+		</div>
+	</div>
+	<div id="bottom">
+	</div>
         
     </div>
     
 </body>
-
 </html>

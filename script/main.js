@@ -71,3 +71,13 @@ function check_input(){
     }
     return true;
 }
+
+function changePic_houses(e){
+	if(e.nodeName == "IMG"){
+		var x = document.getElementById('pic');
+		var src = e.getAttribute("src");
+	
+		x.setAttribute("src",src);
+	}
+
+}
