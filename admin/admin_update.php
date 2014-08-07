@@ -30,7 +30,7 @@
 			$t_row = mysqli_fetch_array($t_result);
 		}
 	?>
-	請選擇欲更改的物件名稱：<select onchange="change_update(event.target.value);">
+	請選擇欲更改的物件名稱：<select onchange="change_page(event.target.value);">
 				<option value=""> 請選擇</option>
 	<?php
 		for($i=0;$i<$length;$i++){

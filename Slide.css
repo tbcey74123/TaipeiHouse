@@ -83,6 +83,10 @@
     from {opacity: 0;}
     to {opacity: 0.4;}
 }
+@-webkit-keyframes CurrentDothide {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
 @-webkit-keyframes Dothide {
     from {opacity: 0.4;}
     to {opacity: 0;}
@@ -104,6 +108,10 @@
 @keyframes Dotshow {
     from {opacity: 0;}
     to {opacity: 0.4;}
+}
+@keyframes CurrentDothide {
+    from {opacity: 1;}
+    to {opacity: 0;}
 }
 @keyframes Dothide {
     from {opacity: 0.4;}

@@ -71,6 +71,13 @@ function check_input(){
     }
     return true;
 }
+function check_search_input() {
+	var input = document.getElementsByTagName('input');
+
+	if(input[0].value==""){
+		return false;
+	}
+}
 
 function changePic_houses(e){
 	if(e.nodeName == "IMG"){

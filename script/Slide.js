@@ -1,7 +1,7 @@
 function displayS(e) {
     
     var before = e.relatedTarget;
-    if(before.id=="main"||before.nodeName=="BODY"||check(before)==1){
+    if(check_target(before)==1||before.nodeName=="BODY"){
         var x = document.getElementById('pic_selector');
         var y = x.getElementsByTagName("li");
         
@@ -30,7 +30,7 @@ function hideS(e) {
     
     var before = e.relatedTarget;
     
-    if(before.id=="main"||before.nodeName=="BODY"|check(before)==1){
+    if(check_target(before)==1||before.nodeName=="BODY"){
         var x = document.getElementById('pic_selector');
         var y = x.getElementsByTagName("li");
         
@@ -39,15 +39,20 @@ function hideS(e) {
         x.style.backgroundColor = "rgba(230,230,230,0)";
         
         for(var i=0;i<y.length;i++){
-            y[i].style.WebkitAnimation = "Dothide 1s";//Chrome, Safari, Opera
-            y[i].style.animation = "Dothide 1s";//Standard Syntax
-            y[i].style.opacity = 0;
+	    if ( y[i].className == "current") {
+		y[i].style.WebkitAnimation = "CurrentDothide 1s";//Chrome, Safari, Opera
+		y[i].style.animation = "CuurentDothide 1s";//Standard Syntax
+	    }else {
+            	y[i].style.WebkitAnimation = "Dothide 1s";//Chrome, Safari, Opera
+            	y[i].style.animation = "Dothide 1s";//Standard Syntax
+ 	    }
+            	y[i].style.opacity = 0;
         }
     }
 }
 
-function check(evn){
-    while(evn && evn.id != "top"){
+function check_target(evn){
+    while(evn && (evn.id != "top" && evn.id != "hot")){
         evn = evn.parentNode;
     }
     if(!evn){

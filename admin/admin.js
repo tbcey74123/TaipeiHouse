@@ -40,19 +40,11 @@ function check_pic_upload(){
 	return true;
 }
 
-function change_update(id){
+function change_page (id) {
 	if(id==""){
-		location = "/admin/admin_update.php";
+		location = window.location.href.split("?")[0];
 	}else{
-		location = "/admin/admin_update.php?id=" + id;
-	}
-}
-
-function change_pic(id){
-	if(id==""){
-		location = "/admin/admin_pic_maintain.php";
-	}else{
-		location = "/admin/admin_pic_maintain.php?id=" + id;
+		location = window.location.href.split("?")[0] + "?id=" + id ;
 	}
 }
 
@@ -82,7 +74,7 @@ function changePic_houses(e){
 		var x = document.getElementById('pic');
 		var src = e.getAttribute("src");
 		var button = document.getElementById('delete');
-		var id = window.location.href.split("id=")[1];
+		var id = window.location.href.split("id=")[1].split("&&")[0];
 		var s = src.replace("/pic/houses/case-"+id+"/pic","");
 		var num = s.split(".")[0];
 		

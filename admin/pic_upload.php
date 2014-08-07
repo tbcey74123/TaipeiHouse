@@ -20,10 +20,10 @@
 	}
 
 	$sql = "UPDATE houses SET pic='$check' WHERE id='$id'";
-
+	
 	if(mysqli_query($con,$sql)){
 		echo "匯入成功!<br/>";
-		echo "<a href=\"/admin/admin_pic_maintain.php\">點此返回</a>";
+		echo "<a href=\"/admin/admin_pic_maintain.php?id=".$id"\">點此返回</a>";
 	}
 ?>
 <head>

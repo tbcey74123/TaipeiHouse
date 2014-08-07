@@ -8,9 +8,10 @@
 <head>
 	<title>TaipeiHouse</title>
 	<meta charset="utf-8">
+	<meta http-equiv="cache-control" content="max-age=0">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="expires" content="0">
+	<meta http-equiv="expires" content="-1">
 	<link type="text/css" rel="stylesheet" href="admin.css">
 	<script type="text/javascript" src="admin.js"></script>
 </head>
@@ -33,7 +34,7 @@
 			$t_row = mysqli_fetch_array($t_result);
 		}
 ?>
-	請選擇欲操作的物件名稱：<select onchange="change_pic(event.target.value);">
+	請選擇欲操作的物件名稱：<select onchange="change_page(event.target.value);">
 				<option value=""> 請選擇</option>
 	<?php
 		for($i=0;$i<$length;$i++){
@@ -67,9 +68,8 @@
 			<?php
 				$location = $_SERVER['DOCUMENT_ROOT']."/pic/houses/case-".$id."/";
 				$i = 1;
-
 				while(file_exists($location."pic".$i.".jpg")){
-					echo "<li><img src='/pic/houses/case-".$id."/pic".$i.".jpg' /></li>";
+					echo "<li><img src='/pic/houses/case-".$id."/pic".$i.".jpg?".rand()."' /></li>";
 					$i++;
 				}
 			?>
