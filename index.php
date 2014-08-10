@@ -41,14 +41,20 @@
         </div>
         
 	<div id="hot">
+		<div id="search_bar">
+			<form action="houses.php" method="GET" onsubmit="return check_search_input();">
+				<input type="text" name="search">
+				<input type="submit" value="查詢">
+			</form>
+		</div>
 <?php
+	echo "<br/>";
 	for($i=0;$i<$length;$i++){
 		if(($i+1)%2){
 			echo "<a class=\"left\" href=\"house_info.php?id=".$info[$i][0]."\">".$info[$i][1]."</a><br/>";
 		}else{
 			echo "<a class=\"right\" href=\"house_info.php?id=".$info[$i][0]."\">".$info[$i][1]."</a><br/>";
 		}
-		//echo $info[$i][1]."<br/>";
 	}
 ?>
         </div>

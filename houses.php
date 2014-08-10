@@ -30,9 +30,24 @@
     
     <div id="main">
 	<div id="house_info">
+		<div id="search_bar">
+			<form action="houses.php" method="GET" onsubmit="return check_search_input();">
+				<input type="text" name="search">
+				<input type="submit" value="查詢">
+			</form>
+		</div>
 <?php
-	for($i=0;$i<$length;$i++){
-		echo "<a href=\"house_info.php?id=".$info[$i][0]."\">".$info[$i][1]."</a><br/>";
+	$search = $_GET['search'];
+	if(!$search){
+		for ($i=0;$i<$length;$i++){
+			echo "<a href=\"house_info.php?id=".$info[$i][0]."\">".$info[$i][1]."</a><br/>";
+		}
+	}else{
+		for ( $i = 0; $i < $length; $i++){
+			if ( strpos($info[$i][1],$search) !== false){
+				echo "<a href=\"house_info.php?id=".$info[$i][0].       "\">".$info[$i][1]."</a><br/>";
+			}
+		}
 	}
 ?>
 	</div>

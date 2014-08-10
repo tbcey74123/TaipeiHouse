@@ -159,3 +159,9 @@ select {
     
 }
 /*Bottom End*/
+
+#search_bar {
+	float: right;
+	position: relative;
+	right: 20px;
+}

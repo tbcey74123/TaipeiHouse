@@ -26,6 +26,7 @@
 #thumbnail li{
 	display: inline;
 	list-style-type: none;
+	padding: 0 5px;
 }
 
 #thumbnail img{
