@@ -38,8 +38,12 @@
                 <li id="pic4"><button type="button"></button></li>
                 </ul>
             </div>
-        </div>
-        
+		<div id="Slide_prev" onclick="change_prev_pic();" onmouseover="show(event.target);" onmouseout="hide(event.target)">
+		</div>
+		<div id="Slide_next" onclick="change_next_pic();" onmouseover="show(event.target);" onmouseout="hide(event.target)">
+		</div>
+	</div>
+      </div> 
 	<div id="hot">
 		<div id="search_bar">
 			<form action="houses.php" method="GET" onsubmit="return check_search_input();">
@@ -51,7 +55,7 @@
 	echo "<br/>";
 	for($i=0;$i<$length;$i++){
 		if(($i+1)%2){
-			echo "<a class=\"left\" href=\"house_info.php?id=".$info[$i][0]."\">".$info[$i][1]."</a><br/>";
+			echo "<a class=\"left\" href=\"house_info.php?id=".$info[$i][0]."\">".$info[$i][1]."</a>";
 		}else{
 			echo "<a class=\"right\" href=\"house_info.php?id=".$info[$i][0]."\">".$info[$i][1]."</a><br/>";
 		}
@@ -62,7 +66,7 @@
         <div id="bottom">
             
         </div>
-    </div>
+    
     
 </body>
 </html>

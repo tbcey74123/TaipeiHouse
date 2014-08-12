@@ -65,7 +65,7 @@ a{
     //border-bottom: 1px solid white;
 }
 #top {
-    width: 900px;
+    width: 100%;
     height: 100px;
     margin: 0 auto 50px;
     //background-color: grey;
@@ -96,7 +96,7 @@ a{
 }*/
 
 #main {
-    width: 900px;
+    width: 74%;
     //height: 1300px;
     margin:0 auto;
     background-color: rgba(90,0,173,0.3);
@@ -141,15 +141,17 @@ select {
 }
 /*Hot start*/
 #hot {
+    width: 74%;
     font-size:20px;
-    padding:20px 0 0 30px;
+    padding-top:20px;
+    margin: 0 auto;
 }
 #hot a{
     color:red;
 }
 #hot .right{
-    position:relative;
-    left:750px;
+	position: relative;
+	left: 20px;
 }
 /*Hot End*/
 /*Bottom Start*/
@@ -163,5 +165,4 @@ select {
 #search_bar {
 	float: right;
 	position: relative;
-	right: 20px;
 }

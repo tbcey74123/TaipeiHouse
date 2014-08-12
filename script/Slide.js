@@ -1,4 +1,4 @@
-function displayS(e) {
+/*function displayS(e) {
     
     var before = e.relatedTarget;
     if(check_target(before)==1||before.nodeName=="BODY"){
@@ -7,7 +7,7 @@ function displayS(e) {
         
         x.style.WebkitAnimation = "Sshow 1s";//Chrome, Safari, Opera
         x.style.animation = "Sshow 1s";//Standard Syntax
-        x.style.backgroundColor = "rgba(230,230,230,0.7)";
+        x.style.backgroundColor = "rgba(230,230,230,0)";
         
         var pic = getComputedStyle(document.getElementById('Slide'),null).backgroundImage;
         
@@ -19,7 +19,7 @@ function displayS(e) {
             }else{
                 y[i].style.WebkitAnimation = "Dotshow 1s";//Chrome, Safari, Opera
                 y[i].style.animation = "Dotshow 1s";//Standard Syntax
-                y[i].style.opacity = 0.4;
+                y[i].style.opacity = 0.2;
             }
         }
     }
@@ -41,7 +41,7 @@ function hideS(e) {
         for(var i=0;i<y.length;i++){
 	    if ( y[i].className == "current") {
 		y[i].style.WebkitAnimation = "CurrentDothide 1s";//Chrome, Safari, Opera
-		y[i].style.animation = "CuurentDothide 1s";//Standard Syntax
+		y[i].style.animation = "CurrentDothide 1s";//Standard Syntax
 	    }else {
             	y[i].style.WebkitAnimation = "Dothide 1s";//Chrome, Safari, Opera
             	y[i].style.animation = "Dothide 1s";//Standard Syntax
@@ -49,7 +49,7 @@ function hideS(e) {
             	y[i].style.opacity = 0;
         }
     }
-}
+}*/
 
 function check_target(evn){
     while(evn && (evn.id != "top" && evn.id != "hot")){
@@ -81,7 +81,7 @@ function changePic(e) {
        
         id = target.id;
         
-        x.style.backgroundImage = "url('pic/" + id + ".png')";
+        x.style.backgroundImage = "url('pic/" + id + ".jpg')";
         clearInterval(auto);
         auto = setInterval(function(){auto_changePic()}, 7000);
         
@@ -95,10 +95,10 @@ function loadPictures(){
     var img3 = new Image();
     var img4 = new Image();
     
-    img1.src = "pic/pic1.png";
-    img2.src = "pic/pic2.png";
-    img3.src = "pic/pic3.png";
-    img4.src = "pic/pic4.png";
+    img1.src = "pic/pic1.jpg";
+    img2.src = "pic/pic2.jpg";
+    img3.src = "pic/pic3.jpg";
+    img4.src = "pic/pic4.jpg";
 }
 
 function auto_changePic(){
@@ -113,4 +113,38 @@ function auto_changePic(){
         next = z[0];
     }
     changePic(next.firstChild);
+}
+
+
+function change_prev_pic(){
+    var x = document.getElementById('Slide');
+    var y = document.getElementById('pic_selector');
+    var z = y.getElementsByTagName("li");
+
+    var current = document.getElementsByClassName('current');
+    next = current[0].previousSibling.previousSibling;
+
+    if(next==null){
+        next = z[3];
+    }
+    changePic(next.firstChild);
+}
+function change_next_pic(){
+    var x = document.getElementById('Slide');
+    var y = document.getElementById('pic_selector');
+    var z = y.getElementsByTagName("li");
+
+    var current = document.getElementsByClassName('current');
+    next = current[0].nextSibling.nextSibling;
+
+    if(next==null){
+        next = z[0];
+    }
+    changePic(next.firstChild);
+}
+function show(e){
+	e.style.opacity = 1;
+}
+function hide(e){
+	e.style.opacity = 0.7;
 }

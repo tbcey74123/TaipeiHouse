@@ -1,20 +1,22 @@
 /*Slides Start*/
 #Slide{
-    background-image: url('pic/pic1.png');
+    width: 80%;
+    height: 400px;
+    margin: 0 auto;
+    background-image: url('pic/pic1.jpg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    height:300px;
     border-bottom: 5px double black;
     opacity: 1;
     border-radius: 10px;
 }
 
 #pic_selector{
-    width:400px;
+    width: 300px;
     height:18px;
     position:relative;
-    top: 282px;
+    top: 382px;
     margin:0 auto;
     background-color: rgba(230,230,230,0);
     text-align:center;
@@ -23,8 +25,9 @@
 
 #pic_selector li {
     display: inline;
-    margin: 0 10px;
-    opacity: 0;
+    margin: 0 5px;
+    text-align: center;
+    //opacity: 0;
 }
 
 #pic_selector li button {
@@ -39,7 +42,7 @@
     cursor:pointer;
 }
 
-#pic_selector li button::before{
+/*#pic_selector li button::before{
     content:"";
     height:8px;
     width:8px;
@@ -47,16 +50,35 @@
     border:0;
     border-radius:8px;
     -webkit-border-radius:8px;
-    background:black;
+    background:gray;
     display:inline-block;
+}
+#pic_selector .current button::before{
+    background: black;
+}*/
+
+#Slide_prev {
+	border-bottom: 5px double gray;
+	border-left: 5px double gray;
+	float: left;
+}
+#Slide_next {
+	border-top: 5px double gray;
+	border-right: 5px double gray;
+	float: right;
+}
+#Slide_prev,#Slide_next {
+	height: 20px;
+	width: 20px;
+	transform: rotate(45deg);
+	position: relative;
+	top: 200px;
+	opacity: 0.7;
+    cursor:pointer;
+
 }
 /*Slides End*/
 
-/*Hot Start*/
-#hot {
-    //height: 800px;   
-}
-/*Hot End*/
 /*Bottom Start*/
 #bottom {
     border-top:5px double black;
@@ -69,10 +91,10 @@
 /*Animatin for Chrome, Safari, Opera */
 @-webkit-keyframes Sshow {
     from {background-color: rgba(230,230,230,0);}
-    to {background-color: rgba(230,230,230,0.7);}
+    to {background-color: rgba(230,230,230,0);}
 }
 @-webkit-keyframes Shide {
-    from {background-color: rgba(230,230,230,0.7);}
+    from {background-color: rgba(230,230,230,0);}
     to {background-color: rgba(230,230,230,0);}
 }
 @-webkit-keyframes CurrentDotshow {
@@ -95,10 +117,10 @@
 /*Standard Syntax*/
 @keyframes Sshow {
     from {background-color: rgba(230,230,230,0);}
-    to {background-color: rgba(230,230,230,0.7);}
+    to {background-color: rgba(230,230,230,0);}
 }
 @keyframes Shide {
-    from {background-color: rgba(230,230,230,0.7);}
+    from {background-color: rgba(230,230,230,0);}
     to {background-color: rgba(230,230,230,0);}
 }
 @keyframes CurrentDotshow {
