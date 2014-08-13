@@ -43,14 +43,18 @@
 	<p>地段：<?php echo $row[5];?></p>
 	<p>地坪：<?php echo $row[6];?></p>
 	<div id="pic_div">
-		<img id="pic" src="">
+<?php
+	$location = $_SERVER['DOCUMENT_ROOT']."/pic/houses/case-".$id."/";
+	if(file_exists($location."pic1.jpg")) {
+		echo   "<img id=\"pic\" src=\"pic/houses/case-".$id."/pic1.jpg\" />";
+	}
+?>
 	</div>
 	</div>
 	<div id="pic_display">
 		<div id="thumbnail">
 			<ul onclick="changePic_houses(event.target);">
 			<?php 
-				$location = $_SERVER['DOCUMENT_ROOT']."/pic/houses/case-".$id."/";
 				$i = 1;
 				
 				while(file_exists($location."pic".$i.".jpg")){
