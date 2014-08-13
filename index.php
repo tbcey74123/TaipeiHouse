@@ -56,19 +56,16 @@
 	echo "<table>";
 	for($i=0;$i<$length;$i++){
 		if(($i+1)%2){
-			echo "<tr><td>";
-			echo "<a class=\"left\" href=\"house_info.php?id=".$info[$i][0]."\">".$info[$i][1]."</a>";
+			echo "<tr><td><a class=\"left\" href=\"house_info.php?id=".$info[$i][0]."\">".$info[$i][1]."</a></td>";
 			if(file_exists("pic/houses/case-".$info[$i][0]."/pic1.jpg")){
-			echo "<img class=\"left\" src=\"pic/houses/case-".$info[$i][0]."/pic1.jpg\" />";
+			echo "<td><img class=\"left\" src=\"pic/houses/case-".$info[$i][0]."/pic1.jpg\" /></td>";
 			}
-			echo "</td>";
 		}else{
-			echo "<td>";
-			echo "<a class=\"right\" href=\"house_info.php?id=".$info[$i][0]."\">".$info[$i][1]."</a>";
+			echo "<td><a class=\"right\" href=\"house_info.php?id=".$info[$i][0]."\">".$info[$i][1]."</a></td>";
 			if(file_exists("pic/houses/case-".$info[$i][0]."/pic1.jpg")){
-			echo "<img class=\"right\" src=\"pic/houses/case-".$info[$i][0]."/pic1.jpg\" /><br/>";
+			echo "<td><img class=\"right\" src=\"pic/houses/case-".$info[$i][0]."/pic1.jpg\" /></td>";
 			}
-			echo "</td></tr>";
+			echo "</tr>";
 		}
 	}
 	echo "</table>";
