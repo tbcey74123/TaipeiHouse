@@ -149,11 +149,18 @@ select {
 #hot a{
     color:red;
 }
-#hot .right{
-	position: relative;
-	left: 20px;
+.left, .right{
+	vertical-align: top;
+}
+#hot img{
+	width: 120px;
+	height: 105px;
+}
+#hot table tr,td{
+	padding: 5px;
 }
 /*Hot End*/
+
 /*Bottom Start*/
 #bottom {
     border-top:5px double white;

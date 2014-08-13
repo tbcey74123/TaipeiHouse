@@ -131,9 +131,6 @@ function change_prev_pic(){
 }
 function change_next_pic(){
     var x = document.getElementById('Slide');
-    var y = document.getElementById('pic_selector');
-    var z = y.getElementsByTagName("li");
-
     var current = document.getElementsByClassName('current');
     next = current[0].nextSibling.nextSibling;
 

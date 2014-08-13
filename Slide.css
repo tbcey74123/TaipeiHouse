@@ -24,9 +24,7 @@
 }
 
 #pic_selector li {
-    display: inline;
-    margin: 0 5px;
-    text-align: center;
+    display: none;
     //opacity: 0;
 }
 
@@ -72,7 +70,7 @@
 	width: 20px;
 	transform: rotate(45deg);
 	position: relative;
-	top: 200px;
+	top: 180px;
 	opacity: 0.7;
     cursor:pointer;
 

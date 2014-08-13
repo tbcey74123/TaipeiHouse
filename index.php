@@ -31,12 +31,12 @@
     <div id="main">
         <div id="Slide" onmouseover="displayS(event);" onmouseout="hideS(event);">
             <div id="pic_selector">
-                <ul onclick="changePic(event.target);">
+              <ul onclick="changePic(event.target);">
                 <li id="pic1" class="current"><button type="button"></button></li>
                 <li id="pic2"><button type="button"></button></li>
                 <li id="pic3"><button type="button"></button></li>
                 <li id="pic4"><button type="button"></button></li>
-                </ul>
+              </ul>
             </div>
 		<div id="Slide_prev" onclick="change_prev_pic();" onmouseover="show(event.target);" onmouseout="hide(event.target)">
 		</div>
@@ -52,14 +52,26 @@
 			</form>
 		</div>
 <?php
-	echo "<br/>";
+	echo "<p style=\"color:red\">熱門物件！！！</p>";
+	echo "<table>";
 	for($i=0;$i<$length;$i++){
 		if(($i+1)%2){
+			echo "<tr><td>";
 			echo "<a class=\"left\" href=\"house_info.php?id=".$info[$i][0]."\">".$info[$i][1]."</a>";
+			if(file_exists("pic/houses/case-".$info[$i][0]."/pic1.jpg")){
+			echo "<img class=\"left\" src=\"pic/houses/case-".$info[$i][0]."/pic1.jpg\" />";
+			}
+			echo "</td>";
 		}else{
-			echo "<a class=\"right\" href=\"house_info.php?id=".$info[$i][0]."\">".$info[$i][1]."</a><br/>";
+			echo "<td>";
+			echo "<a class=\"right\" href=\"house_info.php?id=".$info[$i][0]."\">".$info[$i][1]."</a>";
+			if(file_exists("pic/houses/case-".$info[$i][0]."/pic1.jpg")){
+			echo "<img class=\"right\" src=\"pic/houses/case-".$info[$i][0]."/pic1.jpg\" /><br/>";
+			}
+			echo "</td></tr>";
 		}
 	}
+	echo "</table>";
 ?>
         </div>
         
