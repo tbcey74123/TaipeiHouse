@@ -4,6 +4,9 @@
 	$check=0;
 	$id = $_POST['id'];
 	$location = $_SERVER['DOCUMENT_ROOT']."/pic/houses/case-".$id."/";
+	if(!file_exists($location)){
+	 	mkdir($location);
+	}
 	$i=1;
 	$j=1;
 	while(file_exists($location."pic".$j.".jpg")){
