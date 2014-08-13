@@ -3,5 +3,5 @@
    if($_SESSION['login']==1){
 	   unset($_SESSION['login']);
    }
-   header("Location:admin.php");
+   header("Location:/admin.php");
 ?>
