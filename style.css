@@ -96,7 +96,7 @@ a{
 }*/
 
 #main {
-    width: 74%;
+    width: 1100px;
     //height: 1300px;
     margin:0 auto;
     background-color: rgba(90,0,173,0.3);
@@ -117,8 +117,6 @@ a{
      
 }
 
-.onselect{   
-}
 #form {
     position:relative;
     color: white;
@@ -139,9 +137,13 @@ select {
     position: relative;
     left:10px;
 }
+#house_list {
+    padding: 20px 0 0 30px;
+    font-size: 20px;
+}
 /*Hot start*/
 #hot {
-    width: 74%;
+    width: 1100px;
     font-size:20px;
     padding-top:20px;
     margin: 0 auto;

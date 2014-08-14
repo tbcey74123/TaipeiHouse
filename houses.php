@@ -12,7 +12,6 @@
     <title>TaipeiHouse</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="house_info.css">
     <script type="text/javascript" src="script/main.js"></script>
 </head>
 <body>
@@ -29,30 +28,32 @@
     </div>
     
     <div id="main">
-	<div id="house_info">
 		<div id="search_bar">
 			<form action="houses.php" method="GET" onsubmit="return check_search_input();">
 				<input type="text" name="search">
 				<input type="submit" value="查詢">
 			</form>
 		</div>
+	<div id="house_list">
 <?php
 	$search = $_GET['search'];
+	echo "<table>";
 	if(!$search){
 		for ($i=0;$i<$length;$i++){
-			echo "<a href=\"house_info.php?id=".$info[$i][0]."\">".$info[$i][1]."</a><br/>";
+			echo "<tr><td><a href=\"house_info.php?id=".$info[$i][0]."\">".$info[$i][1]."</a></td></tr>";
 		}
 	}else{
 		for ( $i = 0; $i < $length; $i++){
 			if ( strpos($info[$i][1],$search) !== false){
-				echo "<a href=\"house_info.php?id=".$info[$i][0].       "\">".$info[$i][1]."</a><br/>";
+				echo "<tr><td><a href=\"house_info.php?id=".$info[$i][0]."\">".$info[$i][1]."</a></td></tr>";
 			}
 		}
 	}
+	echo "</table>";
 ?>
 	</div>
         <div id="bottom">
-            
+           
         </div> 
     </div>
     

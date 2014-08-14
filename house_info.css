@@ -1,18 +1,26 @@
+#info {
+	height: 450px;
+}
 #house_info{
-	height: 200px;
+	position: relative;
     	color:red;
    	font-size:20px;
-   	padding: 40px 0 40px 20px;
+   	padding: 40px 0 0px 20px;
 }
 
 #pic_div {
+	float: right;
 	position: relative;
-	top: -100px;
-	left: 500px;
+	top: 50px;
+	right: 50px;
+	
+}
+#pic_div img{
+
+	width: 500px;
+	height: 300px;
 }
 #pic_display {
-	position: relative;
-	bottom: 6px;
 	padding-top: 10px;
 	text-align: center;
 }

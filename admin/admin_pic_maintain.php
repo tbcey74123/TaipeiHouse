@@ -48,8 +48,8 @@
 	?>
 		<div id="pic_upload">
 			<form action="pic_upload.php" method="POST" enctype="multipart/form-data" onsubmit="return check_pic_upload();">
-				<input type="hidden" name="id" value="<?php echo $t_row[0] ;?>">
 				<div id="form">
+					<input type="hidden" name="house_id" value="<?php echo $t_row[0] ;?>">
 					<input type="file" name="pic1"><br/>
 					<input type="file" name="pic2"><br/>
 					<input type="file" name="pic3"><br/>
@@ -58,7 +58,7 @@
 				<button type="button" name="add_column" onclick="addC();">新增欄位</button>
 				<input type="submit" value="送出">
 			 </form>
-			 <p style="color:red">圖片請上傳jpg檔</p>
+			 <p style="color:red">圖片請上傳jpg檔，建議圖片長寬比3：5</p>
 		</div>
 
 	</div>

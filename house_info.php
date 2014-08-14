@@ -29,27 +29,31 @@
     </div>
     
     <div id="main">
-	<div id="house_info">
+	<div id="info">
+		<div id="pic_div">
+<?php
+		$location = $_SERVER['DOCUMENT_ROOT']."/pic/houses/case-".$id."/";
+		if(file_exists($location."pic1.jpg")) {
+			echo   "<img id=\"pic\" src=\"pic/houses/case-".$id."/pic1.jpg\" />";
+		}
+?>
+		</div>
+		<div id="house_info">
 	<?php
 	
 	$sql = "SELECT * FROM houses WHERE id=$id";
 	$fetch = mysqli_query($con,$sql);
 	$row = mysqli_fetch_array($fetch);
+	echo "<table>";
+	echo "<tr><td>案名：".$row[1]."</td></tr>";
+	echo "<tr><td>門牌地址：".$row[2]."</td></tr>";
+	echo "<tr><td>格局：".$row[3]."</td></tr>";
+	echo "<tr><td>建物面積：".$row[4]."</td></tr>";
+	echo "<tr><td>地段：".$row[5]."</td></tr>";
+	echo "<tr><td>地坪：".$row[6]."</td></tr>";
+	echo "</table>";
 	?>
-	<p>案名：<?php echo $row[1];?></p>
-	<p>門牌地址：<?php echo $row[2];?></p>
-	<p>格局：<?php echo $row[3];?></p>
-	<p>建物面積：<?php echo $row[4];?></p>
-	<p>地段：<?php echo $row[5];?></p>
-	<p>地坪：<?php echo $row[6];?></p>
-	<div id="pic_div">
-<?php
-	$location = $_SERVER['DOCUMENT_ROOT']."/pic/houses/case-".$id."/";
-	if(file_exists($location."pic1.jpg")) {
-		echo   "<img id=\"pic\" src=\"pic/houses/case-".$id."/pic1.jpg\" />";
-	}
-?>
-	</div>
+		</div>
 	</div>
 	<div id="pic_display">
 		<div id="thumbnail">
