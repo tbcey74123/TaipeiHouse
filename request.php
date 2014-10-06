@@ -1,5 +1,5 @@
 <?php
-	require($_SERVER['DOCUMENT_ROOT']."/sql/mysql_connection.php");
+	require("sql/mysql_connection.php");
 	$type = $_GET['type'];
 	$name = $_GET['name'];
 	$sex = $_GET['sex'];
@@ -21,7 +21,7 @@
 	$sql = "INSERT INTO `request` (`type`,`name`,`sex`,`celphone`,`telephone`,`mail`,`comments`) VALUES('$type','$name','$sex','$cel','$tel','$mail','$comments')";
 	if(mysqli_query($con,$sql)){
 		echo "委託成功<br/>";
-		echo "<a href=\"/business.html\">點此返回</a>";
+		echo "<a href=\"business.html\">點此返回</a>";
 	}
 
 ?>

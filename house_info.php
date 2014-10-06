@@ -1,7 +1,7 @@
 <?php
     $id = $_GET["id"];
     if(!$id){
-	    header("Location:houses.html");
+	    header("Location:houses.php");
 	    exit;
     }
     require("sql/mysql_connection.php");
@@ -32,7 +32,7 @@
 	<div id="info">
 		<div id="pic_div">
 <?php
-		$location = $_SERVER['DOCUMENT_ROOT']."/pic/houses/case-".$id."/";
+		$location = "pic/houses/case-".$id."/";
 		if(file_exists($location."pic1.jpg")) {
 			echo   "<img id=\"pic\" src=\"pic/houses/case-".$id."/pic1.jpg\" />";
 		}
@@ -62,7 +62,7 @@
 				$i = 1;
 				
 				while(file_exists($location."pic".$i.".jpg")){
-					echo "<li><img src='/pic/houses/case-".$id."/pic".$i.".jpg' /></li>";
+					echo "<li><img src='pic/houses/case-".$id."/pic".$i.".jpg' /></li>";
 					$i++;
 				}
 			?>
