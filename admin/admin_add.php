@@ -14,7 +14,7 @@
 
 <body>
 	<div id="left-part">
-		<a href="/admin/admin.php">返回</a>
+		<a href="admin.php">返回</a>
 	</div>
 	<div id="right-part">
 		<form action="add.php" method="POST" onsubmit="return check_input();">

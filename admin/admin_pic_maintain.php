@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if(!$_SESSION['login']){
-		header("Location:/admin.php");
+		header("Location:../admin.php");
 	}
 ?>
 <html>
@@ -17,11 +17,11 @@
 </head>
 <body>
 	<div id="left-part">
-		<a href="/admin/admin.php">返回</a>
+		<a href="admin.php">返回</a>
 	</div>
 	<div id="right-part">
 	<?php
-		require($_SERVER['DOCUMENT_ROOT']."/sql/mysql_connection.php");
+		require("../sql/mysql_connection.php");
 		$sql = "SELECT * FROM houses ORDER BY id";
 		$result = mysqli_query($con,$sql);
 		$row = mysqli_fetch_all($result);
@@ -66,10 +66,10 @@
 		<div id="thumbnail">
 			<ul onclick="changePic_houses(event.target);">
 			<?php
-				$location = $_SERVER['DOCUMENT_ROOT']."/pic/houses/case-".$id."/";
+				$location = "../pic/houses/case-".$id."/";
 				$i = 1;
 				while(file_exists($location."pic".$i.".jpg")){
-					echo "<li><img src='/pic/houses/case-".$id."/pic".$i.".jpg?".rand()."' /></li>";
+					echo "<li><img src='../pic/houses/case-".$id."/pic".$i.".jpg?".rand()."' /></li>";
 					$i++;
 				}
 			?>

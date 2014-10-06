@@ -1,7 +1,7 @@
 <?php
 	$id = $_GET['id'];
 	$num = $_GET['num'];
-	$path = $_SERVER['DOCUMENT_ROOT']."/pic/houses/case-".$id."/";
+	$path = "../pic/houses/case-".$id."/";
 
 	if($id&&$num){
 		unlink($path."pic".$num.".jpg");

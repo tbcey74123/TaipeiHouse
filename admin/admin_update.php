@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if(!$_SESSION['login']){
-		header("Location:/admin.php");
+		header("Location:../admin.php");
 	}
 ?>
 <html>
@@ -13,11 +13,11 @@
 </head>
 <body>
 	<div id="left-part">
-		<a href="/admin/admin.php">返回</a>
+		<a href="admin.php">返回</a>
 	</div>
 	<div id="right-part">
 	<?php
-		require($_SERVER['DOCUMENT_ROOT']."/sql/mysql_connection.php");
+		require ("../sql/mysql_connection.php");
 		$sql = "SELECT * FROM houses ORDER BY id";
 		$result = mysqli_query($con,$sql);
 		$row = mysqli_fetch_all($result);

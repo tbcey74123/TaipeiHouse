@@ -1,10 +1,10 @@
 <?php
-	require($_SERVER['DOCUMENT_ROOT']."/sql/mysql_connection.php");
+	require("../sql/mysql_connection.php");
 
 	$check=0;
 	$error=0;
 	$id = $_POST["house_id"];
-	$location = $_SERVER['DOCUMENT_ROOT']."/pic/houses/case-".$id."/";
+	$location = "../pic/houses/case-".$id."/";
 	if(!file_exists($location)){
 	 	mkdir($location);
 	}
@@ -15,6 +15,9 @@
 	}
 	$width_max = 500;
 	$height_max = 300;
+	if(!$_FILES) {
+		header("Location:admin_pic_maintain.php");
+	}
 	foreach($_FILES as $files){
 	    if($files["tmp_name"]) {
 		$image_orin = $files["tmp_name"];
@@ -48,7 +51,7 @@
 	}else{
 		echo "上傳成功<br/>";
 	}
-	echo "<a href=\"/admin/admin_pic_maintain.php?id=".$id.         "\">點此返回</a>";
+	echo "<a href=\"admin_pic_maintain.php?id=".$id.         "\">點此返回</a>";
 ?>
 <head>
 <meta charset="utf-8">
