@@ -1,5 +1,6 @@
 <?php
-   session_start();
+	require('admin/session_setting.php');
+	session_start();
    $account = $_POST['account'];
    $passwd = $_POST['passwd'];
 

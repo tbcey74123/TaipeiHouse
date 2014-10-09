@@ -10,6 +10,8 @@
 	<meta charset="utf-8">
 	<link type="text/css" rel="stylesheet" href="admin.css">
 	<script type="text/javascript" src="admin.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="admin-jquery.js"></script>
 </head>
 <body>
 	<div id="left-part">
