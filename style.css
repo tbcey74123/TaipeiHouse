@@ -56,47 +56,46 @@ a{
 
 /*Start*/
 .main-menu   {
-    display:list-item;
-    //border-color:#888888;
-    //background-color:#444444;
+    font-size: 32px;
     text-align:center;
-    margin:auto;
-    padding-bottom: 5px;
-    //border-bottom: 1px solid white;
+    position: relative;
+    top: 20px;
+    padding-bottom: 30px;
+    width: 180px;
+
 }
-#top {
-    width: 100%;
-    height: 100px;
-    margin: 0 auto 50px;
-    //background-color: grey;
-    text-align: center;
+.main-menu a {
+    border-radius: 10px;
+}
+
+#left-side {
+    float: left;
+    position: fixed;
+    background-color: rgba(248,248,255,0.5);
+    height: 100%;
     //color: #AAA;
-    border-bottom: 10px;
 }
 #div_page_selection {
     position: relative;
-    width:900px;
-    margin:0 auto;
-    top: 40px;
-    //border-bottom: 1px solid white;
-    background-image: url('pic/line-2.png');
-    background-repeat: no-repeat;
-    background-position: center    26px;
+    top: 30px;
+    
 }
-#ul_page_selection li{
-    //font-size: 2em;
-    display: inline;
-    padding-bottom: 0px;
-    margin:0px 15px;
-}
+
+
 /*#AboutMe {
     background-image: url('pic/main-menu-button-about-me.png');
     height: 40px;
     width: 150px;
 }*/
+#right-side {
+	width: 1100px;
+	position: relative;
+	top: 20px;
+	left: 200px;
+}
 
 #main {
-    width: 1100px;
+    position: relative;
     //height: 1300px;
     margin:0 auto;
     background-color: rgba(192,192,192,0.7);
@@ -119,7 +118,6 @@ a{
 
 #form {
     position:relative;
-    color: white;
     font-size: 20px;
     padding: 50px 0 0 212px;
     margin: 0 auto;
@@ -149,7 +147,7 @@ select {
     margin: 0 auto;
 }
 #hot a{
-    color:white;
+    color: black;
     font-size: 1.2em;
 }
 #hot tr{

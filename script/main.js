@@ -1,6 +1,25 @@
+$(document).ready(function() {
+	var height = document.body.clientHeight;
+
+	//$('#left-side').css("height",height);
+
+
+});
+
+
+
 function menu_select(e) {
     var src = e.src;
-    if(e.nodeName=="IMG"){
+    
+    if (e.nodeName == "A") {
+	e.style.fontSize = "40px";
+	e.style.fontWeight = "700";
+	e.style.backgroundColor = "rgba(248,248,255,1)";
+	e.style.border = "2px solid rgba(248,248,255,1)";
+	e.parentNode.style.paddingBottom = "22px";
+    }
+    
+    /*if(e.nodeName=="IMG"){
         if(src.match("-3a.jpg")){
             return ;   
         }
@@ -14,12 +33,21 @@ function menu_select(e) {
         background.style.backgroundImage = "none";
         
         e.parentNode.parentNode.style.borderBottom = "1px solid white";
-    }
+    }*/
     
 }
 function menu_leave(e) {
     var src = e.src;
-    if(e.nodeName=="IMG"){
+    
+    if (e.nodeName == "A") {
+    	e.style.fontSize = "32px";
+	e.style.fontWeight = "400";
+	e.style.backgroundColor = null;
+	e.style.border = null;
+	e.parentNode.style.paddingBottom = "30px";
+    
+    }
+    /*if(e.nodeName=="IMG"){
         if(src.match("-3a.jpg")){
             return ;   
         }
@@ -33,7 +61,7 @@ function menu_leave(e) {
         background.style.backgroundImage = "url('pic/line-2.png')";
         
         e.parentNode.parentNode.style.borderBottom = "";
-    }
+    }*/
 }
 
 function detect_input(e){
