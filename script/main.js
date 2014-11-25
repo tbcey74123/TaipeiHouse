@@ -64,14 +64,71 @@ function menu_leave(e) {
     }
 }*/
 
-function detect_input(e){
+function detect_input(e, tar){
+
     var isValidKey = false;
-    var inputCode = e.keyCode;
+    var inputCode = window.event ? e.keyCode : e.which;
+
     if(inputCode>=48 && inputCode<=57){
         isValidKey = true;
     }
-    e.returnValue  = isValidKey;
+
+    if(inputCode==13 || inputCode==8 || inputCode==0)
+	    isValidKey = true;
+    if(isValidKey) {
+    	    var num = input_num(e, tar);
+	    if(num != 1)
+		    isValidKey = false;
+    }
+    return isValidKey;
 }
+
+function input_num(e, tar) {
+
+	var isValidNum = false;
+	var input = document.getElementsByTagName('input');
+	var limit = 0;
+	var telORcel = false;
+
+	for(var i = 0; i < 4; i++) {
+		if(input[i].name == tar) {
+			switch(tar) {
+				case "name":
+					limit = 10;
+					break;
+				case "celphone":
+				case "telephone":
+					telORcel = true;
+					limit = 10;
+					break;
+				case "mail-address":
+					limit = 30;
+					break;
+			}
+		
+			var length = input[i].value.length;
+			if(length < limit) {
+				isValidNum = true;
+			}
+			break;
+		}
+	}
+	
+	if(telORcel) {
+		if(isValidNum) {
+			return 1;
+		}else {
+			return 0;
+		}
+	}else {
+		if(isValidNum) {
+			e.returnValue = isValidNum;
+		}else {
+			e.returnValue = null;
+		}
+	}
+}
+
 
 function reset_form(){
     var input = document.getElementsByTagName('input');
@@ -91,12 +148,30 @@ function reset_form(){
 function check_input(){
     var input = document.getElementsByTagName('input');
     var select = document.getElementsByTagName('select');   
-    
+    var text = document.getElementsByTagName('textarea');
+    var num = input[1].value.length + input[2].value.length;
+
     if(input[0].value=="" || input[3].value==""||select[0].value=="space"||select[1].value=="space"){
-        return false;
-    }else if(input[1].value=="" && input[2].value==""){
+	alert("請確實填寫欄位");
         return false;
     }
+    if(input[1].value=="" && input[2].value==""){
+	    alert("手機及電話請則一填寫");
+        return false;
+    }
+    if(input[0].value.length > 10) {
+	    alert("名字寫太長囉......請控制在10個字元內");
+	    return false;
+    }
+    if((num != 10) && (num != 20)) {
+	    alert("請確認電話碼數是否正確");
+	    return false;
+    }
+    if(text[0].value.length > 200) {
+	    alert("意見麻煩控制在200個字元內");
+	    return false;
+    }
+
     return true;
 }
 function check_search_input() {

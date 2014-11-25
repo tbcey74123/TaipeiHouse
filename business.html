@@ -32,14 +32,15 @@
                                 <option value="c">租屋</option>
                                 <option value="d">出租</option>
                               </select><br/><br/>
-                姓名：<input type="text" name="name"><br/><br/>
+                姓名：<input type="text" name="name" onkeypress="input_num(event, 'name');"
+><br/><br/>
                 性別：<select name="sex">
                         <option value="space" disabled="disabled" selected="selected">請選擇</option>
                         <option value="1">男</option>
                         <option value="0">女</option>
                      </select><br/><br/>
-                行動電話：<input type="tel" name="celphone" onkeypress="detect_input(event);"> 住家電話：<input type="tel" name="telephone" onkeypress="detect_input(event);"><br/><br/>
-                E-mail：<input type="text" name="mail-address"><br/><br/>
+                行動電話：<input type="tel" name="celphone" onkeypress="return detect_input(event, 'celphone');"> 住家電話：<input type="tel" name="telephone" onkeypress="detect_input(event, 'telephone');"><br/><br/>
+                E-mail：<input type="text" name="mail-address" onkeypress="input_num(event, 'mail-address');"><br/><br/>
                 其他需求及意見：<br/>
                 <textarea name="comments" rows="5" cols="30"></textarea><br/>
                 <p id="ps">註：行動電話及住家電話需擇一填寫</p><br/>
