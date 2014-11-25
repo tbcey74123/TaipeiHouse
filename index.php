@@ -14,7 +14,6 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="Slide.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="script/main.js"></script>
     <script type="text/javascript" src="script/Slide.js"></script>
 </head>
 <body onload="loadPictures(); auto = setInterval(function(){auto_changePic()}, 7000)">

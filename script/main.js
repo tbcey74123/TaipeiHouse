@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 
 
-function menu_select(e) {
+/*function menu_select(e) {
     var src = e.src;
     
     if (e.nodeName == "A") {
@@ -19,7 +19,7 @@ function menu_select(e) {
 	e.parentNode.style.paddingBottom = "22px";
     }
     
-    /*if(e.nodeName=="IMG"){
+    if(e.nodeName=="IMG"){
         if(src.match("-3a.jpg")){
             return ;   
         }
@@ -33,7 +33,7 @@ function menu_select(e) {
         background.style.backgroundImage = "none";
         
         e.parentNode.parentNode.style.borderBottom = "1px solid white";
-    }*/
+    }
     
 }
 function menu_leave(e) {
@@ -47,7 +47,7 @@ function menu_leave(e) {
 	e.parentNode.style.paddingBottom = "30px";
     
     }
-    /*if(e.nodeName=="IMG"){
+    if(e.nodeName=="IMG"){
         if(src.match("-3a.jpg")){
             return ;   
         }
@@ -61,8 +61,8 @@ function menu_leave(e) {
         background.style.backgroundImage = "url('pic/line-2.png')";
         
         e.parentNode.parentNode.style.borderBottom = "";
-    }*/
-}
+    }
+}*/
 
 function detect_input(e){
     var isValidKey = false;
