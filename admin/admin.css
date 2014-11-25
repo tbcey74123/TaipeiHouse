@@ -80,6 +80,7 @@ table,td,tr{
 	width: 500px;
 	height: 300px;
 	border: 4px double black;
+	word-break: break-all;
 }
 #mansion_intro {
 	width: 500px;
@@ -87,5 +88,6 @@ table,td,tr{
 	border: 2px solid black;
 	position: relative;
 	top: 50px;
+	word-break: break-all;
 }
 

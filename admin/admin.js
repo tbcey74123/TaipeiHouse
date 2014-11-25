@@ -108,7 +108,7 @@ function mansion_change(id) {
 	if(id==""){
 		location = window.location.href.split("?")[0];
 	}else{
-		location = window.location.href + "&id=" + id ;
+		location = window.location.href.split("&")[0] + "&id=" + id ;
 	}
 	
 }

@@ -246,4 +246,11 @@ Bottom End*/
 	background-color: white;
 }
 
-
+.mansion_unit {
+	width: 20%;
+	height: 200px;
+	float: left;
+}
+.mansion_unit_end {
+	clear: both;
+}

@@ -1,5 +1,4 @@
 <?php
-	require("../sql/mysql_connection.php");
 	require("session_setting.php");
 
 	session_start();
@@ -23,6 +22,7 @@
 	<div id="right-part">
 	請選擇欲豪宅區域：<select onchange="location_change(event.target.value);">
 <?php
+	require("../sql/mysql_connection.php");
 	$location = $_GET['location'];
 
 	$Default = array("test", "DaAn");

@@ -1,13 +1,4 @@
-<!DOCTYPE>
-<html>
-<head>
-<meta charset="utf-8">
-</head>
-<body>
-<body>
-</html>
 <?php
-	require("../sql/mysql_connection.php");
 	require("session_setting.php");
 
 	session_start();
@@ -15,6 +6,7 @@
 		header("Location:../admin.php");
 		exit;
 	}
+	require("../sql/mysql_connection.php");
 
 	$input = $_FILES['infor']['tmp_name'];
 	$file = fopen($input, "r");
@@ -43,21 +35,29 @@
 		$sql = "INSERT INTO `mansion` (`mansion_id`, `name`, `location`) VALUES('$id', '$name', '$location')"; 
 
 		if(mysqli_query($con, $sql)) {
-		$p_target = $profile_target . "/mansion-" . $id;
-		$i_target = $intro_target . "/mansion-" . $id;
-		
+			$p_target = $profile_target . "/mansion-" . $id;
+			$i_target = $intro_target . "/mansion-" . $id;
 			
-		$profile = fopen($p_target, "w") or die("無法開啟文件"); 
-		fwrite($profile, fgets($file));
-		fclose($profile);
+				
+			$profile = fopen($p_target, "w") or die("無法開啟文件"); 
+			fwrite($profile, fgets($file));
+			fclose($profile);
 
-		$intro = fopen($i_target, "w") or die("無法開啟文件");
-		fwrite($intro, fgets($file));
-		fclose($profile);
-		echo $name . "資料匯入成功<br/>";
+			$intro = fopen($i_target, "w") or die("無法開啟文件");
+			fwrite($intro, fgets($file));
+			fclose($profile);
+			echo $name . "資料匯入成功<br/>";
 		}
 	}
 
 	echo "匯入結束<br/>";
 	echo "<a href=\"admin_mansion_add.php\">點此返回</a>";
 ?>
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<body>
+</html>
