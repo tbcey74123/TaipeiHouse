@@ -1,12 +1,7 @@
 <?php
-	require("../sql/mysql_connection.php");
 	require("session_setting.php");
-	
-	session_start();
-	if(!$_SESSION['login']) {
-		header("Location:../admin.php");
-		exit;
-	}
+	start_session();   //This function declared in 'session_setting.php'.	
+	require("../sql/mysql_connection.php");
 
 	$id = $_GET['id'];
 	

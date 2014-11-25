@@ -1,12 +1,8 @@
 <?php
-	require("../sql/mysql_connection.php");
 	require("session_setting.php");
+	start_session();   //This function declared in 'session_setting.php'.
 	
-	session_start();
-	if(!$_SESSION['login']) {
-		header("Location:../admin.php");
-		exit;
-	}
+	require("../sql/mysql_connection.php");
 
 	$id = $_POST['id'];
 	$name = $_POST['name'];

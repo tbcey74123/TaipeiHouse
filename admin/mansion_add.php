@@ -1,11 +1,7 @@
 <?php
 	require("session_setting.php");
+	start_session();   //This function declared in 'session_setting.php'.
 
-	session_start();
-	if(!$_SESSION['login']) {
-		header("Location:../admin.php");
-		exit;
-	}
 	require("../sql/mysql_connection.php");
 
 	$input = $_FILES['infor']['tmp_name'];
@@ -45,7 +41,7 @@
 
 			$intro = fopen($i_target, "w") or die("無法開啟文件");
 			fwrite($intro, fgets($file));
-			fclose($profile);
+			fclose($intro);
 			echo $name . "資料匯入成功<br/>";
 		}
 	}

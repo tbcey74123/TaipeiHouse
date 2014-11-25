@@ -1,8 +1,6 @@
-<?
-	session_start();
-	if(!$_SESSION['login']){
-		header("Location:".$_SEVER['DOCUMENT_ROOT']."admin.php");
-	}
+<?php
+	require('session_setting.php');	
+	start_session();   //This function declared in 'session_setting.php'.
 ?>
 <html>
 <head>

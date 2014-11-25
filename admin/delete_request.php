@@ -1,6 +1,9 @@
 <?php
-	require("../sql/mysql_connection.php");
 	require("session_setting.php");
+	start_session();   //This function declared in 'session_setting.php'.
+	
+	require("../sql/mysql_connection.php");
+
 	
 	session_start();
 	if(!$_SESSION['login']) {

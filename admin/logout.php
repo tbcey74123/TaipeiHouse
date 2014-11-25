@@ -1,6 +1,5 @@
 <?php
-   require('session_setting.php');
-   session_start();
+   	session_start();
 
 	$redirect = $_GET['redirect'];
 

@@ -1,8 +1,6 @@
 <?php
-	session_start();
-	if(!$_SESSION['login']){
-		header("Location:../admin.php");
-	}
+	require('session_setting.php');
+	start_session();   //This function declared in 'session_setting.php'.
 ?>
 <html>
 <head>

@@ -1,10 +1,7 @@
 <?php
 	require("session_setting.php");
+	start_session();   //This function declared in 'session_setting.php'.
 
-	session_start();
-	if(!$_SESSION['login']){
-		header("Location:../admin.php");
-	}
 ?>
 <html>
 <head>
@@ -24,8 +21,13 @@
 <?php
 	require("../sql/mysql_connection.php");
 	$location = $_GET['location'];
+	
+	$Lsql = "SELECT * FROM mansion_location ORDER BY id";
+	$Lresult = mysqli_query($con, $Lsql);
+	while($tmp = mysqli_fetch_assoc($Lresult)){
+		$Default[] = $tmp;
+	}
 
-	$Default = array("test", "DaAn");
 	if($location) {
 		echo "<option disabled=\"disabled\">請選擇</option>";
 	}else {
@@ -33,19 +35,12 @@
 	}
 
 	foreach($Default as $a) {
-		if($a == $location) {
-			echo "<option value=\"" . $a . "\"selected=\"selected\">";
+		if($a['location'] == $location) {
+			echo "<option value=\"" . $location . "\"selected=\"selected\">";
 		}else {
-			echo "<option value=\"" . $a . "\">";
+			echo "<option value=\"" . $a['location'] . "\">";
 		}
-		switch($a) {
-			case 'test':
-				echo "test";
-				break;
-			case 'DaAn':
-				echo "大安";
-				break;
-		}
+		echo $a['Chinese_name'];
 		echo "</option>";
 
 	}

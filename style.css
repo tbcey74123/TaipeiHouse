@@ -82,6 +82,7 @@ a{
     position: fixed;
     background-color: #206daa; 
     height: 100%;
+    z-index: 2;
     //color: #AAA;
 }
 #div_page_selection {
@@ -91,7 +92,7 @@ a{
 }
 
 #right-side {
-	width: 85%;
+	width: 1200px;
 	height: 1200px;
 	position: relative;
 	left: 220px;
@@ -281,10 +282,12 @@ Bottom End*/
 }
 
 .mansion_unit {
-	width: 25%;
+	width: 280px;
 	height: 200px;
 	float: left;
-	padding: 10px 20px 20px 10px;
+	padding: 10px 0 20px 0;
+	position: relative;
+	left: 20px;
 }
 
 .mansion_unit img {
@@ -293,4 +296,40 @@ Bottom End*/
 }
 .mansion_unit_end:after {
 	//clear: both;
+}
+
+/*test unit*/
+.test_unit {
+	width: 30%;
+	height: 450px;
+	float: left;
+	background-color: white;
+	margin: 10px 40px 10px 40px;
+	box-shadow:4px 4px 3px rgba(20%,20%,40%,0.5);
+}
+/*
+.mask {
+	width: 100%;
+	height: 100%;
+	background-color: gray;
+	opacity: 0.1;
+	float: left;
+}*/
+.test_unit img {
+	width: 100%;
+}
+.test_unit h1 {
+	font-size: 2em;
+	font-weight: bolder;
+	position: relative;
+	top: -50px;
+	left: 10px;
+}
+.test_intro p {
+	font-size: 20px;	
+	color: gray;
+	position: relative;
+	top: -24px;
+	left: 10px;
+
 }

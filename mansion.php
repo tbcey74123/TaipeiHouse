@@ -41,33 +41,42 @@
 	<div id="house_list">
 <?php
 	$search = $_GET['search'];
-	$Default = array("test", "DaAn");
+
+	$Lsql = "SELECT * FROM mansion_location ORDER BY id";
+	$Lresult = mysqli_query($con, $Lsql);
+	while($tmp = mysqli_fetch_assoc($Lresult)) {
+		$Default[] = $tmp;
+	}
+
 
 	if(!$search){
-		foreach($Default as $a) {
-				echo "<div class=\"location_unit\"><h1>" . $a . "</h1></div>";
-			$j = 1;
-			for ($i=0;$i<$length;$i++){
-				if($info[$i]["location"] == $a) {
-						echo "<div class=\"mansion_unit\"><a href=\"mansion_info.php?location=" . $a . "&id=" . $info[$i]["mansion_id"] . "\"><img src=\"pic/alt_pic.png\"></a></div>";
-					$j++;
-				}
-			}	
+	   	if($Default) {
+			foreach($Default as $a) {
+				echo "<div class=\"location_unit\"><h1>" . $a['Chinese_name'] . "</h1></div>";
+				$j = 1;
+				for ($i=0;$i<$length;$i++){
+					if($info[$i]["location"] == $a['location']) {
+						echo "<div class=\"mansion_unit\"><a href=\"mansion_info.php?location=" . $a['location'] . "&id=" . $info[$i]["mansion_id"] . "\"><img src=\"pic/alt_pic.png\"></a></div>";
+						$j++;
+					}
+				}		
+			}
 		}
 	}else{
 		$j = 1;
 		for ( $i = 0; $i < $length; $i++){
 			if (strpos($info[$i]["name"], $search) !== false){
-				if(!($j % 5)) {
+				if(!($j % 5))
 					echo "<div class=\"mansion_unit mansion_unit_end\">";
-				}else {
+				else
 					echo "<div class=\"mansion_unit\">";
-				}
-					echo "<a href=\"mansion_info.php?location=" . $a . "&id=" . $info[$i]["mansion_id"] . "\"><img src=\"pic/alt_pic.png\"></a></div>";
+
+				echo "<a href=\"mansion_info.php?location=" . $a . "&id=" . $info[$i]["mansion_id"] . "\"><img src=\"pic/alt_pic.png\"></a></div>";
 				$j++;
 			}
 		}
 	}
+
 ?>
 	</div>
 	</div>

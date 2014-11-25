@@ -1,9 +1,9 @@
 <?php
-  session_start();
-  if($_SESSION['login']=="1"){
-	header("Location:admin/admin.php");
-	exit;
-  }
+	session_start();
+ 	if($_SESSION['login']=="1"){
+ 	      header("Location:admin/admin.php");
+ 	      exit;
+	}
 ?>
 <!DOCTYPE html>
 <html>

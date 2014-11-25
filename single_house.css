@@ -3,7 +3,6 @@
 	height: 900px;
 	position: relative;
 	top: 20px;
-	left: 20px;
 	float: left;
 	background-color: white;
 }
@@ -19,12 +18,15 @@
 
 
 #mansion_profile {
+	width: 500px;
+	margin: 0 auto;
 	position: relative;
     	color: red;
    	font-size: 24px;
 	left: 50px;
 	top: 100px;
 	float: left;
+	word-break: break-all;
 }
 
 #pic_div {
@@ -64,14 +66,15 @@
 }
 
 #right_part {
-	width: 600px;
+	width: 500px;
 	height: 900px;
 	background-color: white;
 	position: relative;
 	top: 20px;
-	left: 90px;
+	left: 50px;
 	float: left;
 	font-size: 24px;
+	word-break: break-all;
 }
 
 

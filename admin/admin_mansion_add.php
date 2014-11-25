@@ -1,8 +1,6 @@
-<?
-	session_start();
-	if(!$_SESSION['login']) {
-		header("Location:../admin.php");
-	}
+<?php
+	require('session_setting.php');
+	start_session();   //This function declared in 'session_setting.php'.
 ?>
 <html>
 <head>
@@ -21,9 +19,20 @@
 	<div id="right-part">
 		<form action="mansion_add.php" method="POST" enctype="multipart/form-data" onsubmit="return check_input();">
 			<select name="location">
-				<option disabled="disabled" selected="selected">請選擇</option>
-				<option value="DaAn">大安區</option>
-				<option value="test">test</option>
+				<option disabled="disabled" selected="selected">請選擇</option> 
+<?php
+	require('../sql/mysql_connection.php');
+
+	$sql = "SELECT * FROM mansion_location ORDER BY id";
+	$result = mysqli_query($con, $sql);
+	while($tmp = mysqli_fetch_assoc($result)) {
+		$Default[] = $tmp;
+	}
+
+	foreach($Default as $a) {
+		echo "<option value=\"" . $a['location'] . "\">" . $a['Chinese_name'] . "</option>"; 
+	}
+?>
 			<select>
 			<br/>
 			<input type="file" name="infor" id="infor"><br/>

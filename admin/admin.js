@@ -95,6 +95,9 @@ function delete_house(id) {
 		location = "delete_house.php?id=" + id;
 
 }
+function delete_location() {
+	return confirm("確定要刪除這個區域？");
+}
 
 function location_change(Location) {
 	if(Location==""){

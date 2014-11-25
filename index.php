@@ -55,7 +55,18 @@
 	   <div id="hot">
 <?php
 	for($i=0;$i<$length;$i++){
-		echo "<div class=\"house_unit\" id=\"house-" . $info[$i]['id'] . "\">";
+		echo "<div class=\"test_unit\" id=\"house-" . $info[$i]['id'] . "\">";
+		echo "<div class=\"mask\"></div>";
+		echo "<img src=\"pic/alt_pic.png\">";
+		echo "<h1>" . $info[$i]['name'] . "</h1>";
+		echo "<div class=\"test_intro\">";
+		echo "<p>" . $info[$i]['location'] . "</p>";
+		echo "<p>" . $info[$i]['structure'] . "</p>";
+		echo "<p>" . $info[$i]["acreage"] . "平方公尺</p>";
+		echo "<p>" . $info[$i]["floor"] . "坪</p>";
+		
+		echo "</div></div>";
+		/*echo "<div class=\"house_unit\" id=\"house-" . $info[$i]['id'] . "\">";
 
 		echo "<div class=\"house_img\"><img src=\"pic/alt_pic.png\" ></div>";
 		echo "<div class=\"house_intro\">";
@@ -67,20 +78,7 @@
 		echo "<p>建物面積：" . $info[$i]["acreage"] . "平方公尺</p>";
 		echo "<p>地坪：" . $info[$i]["floor"] . "</p>";
 
-		echo "</div></div></div>";
-/*
-			echo "<tr><td><a class=\"left\" href=\"house_info.php?id=".$info[$i]["id"]."\">".$info[$i]["name"]."</a>";
-			if(file_exists("pic/houses/case-".$info[$i]["id"]."/pic1.jpg")){
-			echo "<img class=\"left\" src=\"pic/houses/case-".$info[$i]["id"]."/pic1.jpg\" />";
-			}
-			echo "</td>";
-		}else{
-			echo "<td><a class=\"right\" href=\"house_info.php?id=".$info[$i]["id"]."\">".$info[$i]["name"]."</a>";
-			if(file_exists("pic/houses/case-".$info[$i]["id"]."/pic1.jpg")){
-			echo "<img class=\"right\" src=\"pic/houses/case-".$info[$i]["id"]."/pic1.jpg\" />";
-			}
-			echo "</td></tr>";
-		}*/
+		echo "</div></div></div>";*/
 	}
 ?>
               </div>
