@@ -7,18 +7,10 @@
     <script type="text/javascript" src="script/main.js"></script>
 </head>
 <body>
-    <div id="left-side">
-        <div id="div_page_selection">
-            <ul id="ul_page_selection" onmouseover="menu_select(event.target)" onmouseout="menu_leave(event.target)">
-                <li class="main-menu" id="home"><a href="index.php">首頁</a></li>
-		<li class="main-menu" id="AboutMe"><a href="aboutus.html">關於我</a></li>
-                <li class="main-menu" id="mansion"><a href="mansion.php">豪宅導覽</a></li>
-
-                <li class="main-menu current-page" id="Business"><a href="business.html">線上委託</a></li>
-            </ul>
-        </div>
-    </div>
-    
+<?php
+	require("left_side.php");
+	output_leftside();
+?>
     <div id="right-side">
         
         <div id="form">
