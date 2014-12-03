@@ -31,7 +31,7 @@ footer, header, hgroup, menu, nav, section {
 html, body {
     font-family: 標楷體;
     height: 100%;
-    background-color: #0d2d46;
+    background-color: #c9c9c9;
 }
 ol, ul {
 	list-style: none;
@@ -60,7 +60,8 @@ a{
     width: 180px;
     height: 60px;
     margin: 30px 5px 30px 5px;
-    background-color: #b6d7f1;
+    background-color: #206daa;
+    border: 1px solid white;
 }
 .main-menu a {
     position: relative;
@@ -69,13 +70,17 @@ a{
 }
 
 .current-page {
-    background-color: #2888d5;
+    background-color: white; 
+}
+
+.current-page a {
+    color: #206daa;
 }
 
 #left-side {
     float: left;
     position: fixed;
-    background-color: #7cb7e6; 
+    background-color: #206daa; 
     height: 100%;
     //color: #AAA;
 }
@@ -87,11 +92,12 @@ a{
 
 #right-side {
 	width: 85%;
-	height: 95%;
+	height: 1200px;
 	position: relative;
-	left: 200px;
+	left: 220px;
 	top: 10px;
-	background-color: white;
+	background-color: #c9c9c9;
+	margin-bottom: 30px;
 }
 
 #main {
@@ -181,13 +187,13 @@ a.left,a.right{
 }
 /*Hot End*/
 
-/*Bottom Start*/
+/*Bottom Start
 #bottom {
     border-top:5px double white;
     height: 100px;
     
 }
-/*Bottom End*/
+Bottom End*/
 
 #search_bar {
 	float: right;
@@ -197,15 +203,14 @@ a.left,a.right{
 
 /*css For About Us page*/
 #profile {
-	width: 90%;
-	height: 80%;
+	height: 800px;
 	border-bottom: 2px double black;
 }
 
 
 #profile-pic {
 	width: 40%;
-	height: 90%;
+	height: 600px;
 	background-color: black;
 	position: relative;
 	top: 10px;
@@ -215,7 +220,7 @@ a.left,a.right{
 
 #profile-text {
 	width: 50%;
-	height: 90%;
+	height: 800px;
 	float: left;
 	padding-top: 10px;
 	padding-left: 50px;
@@ -227,5 +232,16 @@ a.left,a.right{
 
 #self-introduction {
 	width: 90%;
-	height: 30%;
+	height: 300px;
+	background-color: red;
+}
+
+
+#form {
+	width: 500px;
+	height: 600px;
+	position: relative;
+	top: 20px;
+	padding: 20px;
+	background-color: white;
 }

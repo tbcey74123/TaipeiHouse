@@ -20,9 +20,13 @@
 	<div id="right-part">
 	<?php
 		require("../sql/mysql_connection.php");
-		$sql = "SELECT `type`,`name` FROM `request` ORDER BY `id`";
+		$sql = "SELECT `type`,`name`, `id` FROM `request` ORDER BY `id`";
 		$result = mysqli_query($con,$sql);
-		$row = mysqli_fetch_all($result);
+		//$row = mysqli_fetch_all($result);
+		while($tmp = mysqli_fetch_assoc($result)) {
+			$row[] = $tmp;
+		}
+		
 		$length = count($row);
 
 		echo "<table>";
@@ -30,14 +34,14 @@
 		for( $i = 0; $i < $length; $i++){
 			echo "<tr>";
 			echo "<td>";
-			switch($row[$i][0]){
+			switch($row[$i]["type"]){
 				case 'a': echo "買屋" ; break;
 				case 'b': echo "賣屋" ; break;
 				case 'c': echo "租屋" ; break;
 				case 'd': echo "出租" ; break;
 			}
 			echo "</td>";
-			echo "<td><a href=\"admin_request.php?name=".$row[$i][1]."\">".$row[$i][1]."</a></td>";
+			echo "<td><a href=\"admin_request.php?id=".$row[$i]["id"]."\">".$row[$i]["name"]."</a></td>";
 			echo "</tr>";
 		}
 		echo "</table>";
@@ -45,9 +49,9 @@
 	</div>
 	<div id="request_info">
 		<?php
-  			if($_GET['name']){
-				$name = $_GET['name'];
-				$Ssql = "SELECT * FROM `request` WHERE `name`='$name'";
+  			if($_GET['id']){
+				$id = $_GET['id'];
+				$Ssql = "SELECT * FROM `request` WHERE `id`='$id'";
 			        $Sresult = mysqli_query($con,$Ssql);
 				$Srow = mysqli_fetch_row($Sresult);
 				
@@ -70,6 +74,8 @@
 				echo "信箱：".$Srow[6]."<br/>";
 				echo "其他意見：<br/>";
 				echo nl2br($Srow[7]);
+				echo "<br/>";
+				echo "<button onclick = 'delete_request(" . $id . ");'>刪除委託</button>";
 			}
 		?>
 	</div>

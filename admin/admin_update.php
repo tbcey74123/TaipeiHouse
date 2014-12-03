@@ -22,7 +22,11 @@
 		require ("../sql/mysql_connection.php");
 		$sql = "SELECT * FROM houses ORDER BY id";
 		$result = mysqli_query($con,$sql);
-		$row = mysqli_fetch_all($result);
+		//$row = mysqli_fetch_all($result);
+		while($tmp = mysqli_fetch_assoc($result)) {
+			$row[] = $tmp;
+		}
+		
 		$length = count($row);
 
 		$id = $_GET['id'];
@@ -36,10 +40,10 @@
 				<option value=""> 請選擇</option>
 	<?php
 		for($i=0;$i<$length;$i++){
-			if($row[$i][0]==$id){
-				echo "<option value=\"".$row[$i][0]."\" selected=\"selected\">".  $row[$i][1]."</option>";	
+			if($row[$i]["id"]==$id){
+				echo "<option value=\"".$row[$i]["id"]."\" selected=\"selected\">".  $row[$i]["name"]."</option>";	
 			}else{	
-				echo "<option value=\"".$row[$i][0]."\">".$row[$i][1]."</option>";
+				echo "<option value=\"".$row[$i]["id"]."\">".$row[$i]["name"]."</option>";
 			}
 		}	
 		echo "</select>";

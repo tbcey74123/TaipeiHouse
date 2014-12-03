@@ -84,3 +84,9 @@ function changePic_houses(e){
 	}
 
 }
+
+function delete_request(id) {
+	if(confirm("確定要刪除這件委託？"))
+		location = "delete_request.php?id=" + id;
+
+}

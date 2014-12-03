@@ -3,7 +3,11 @@
 	
 	$sql = "SELECT id,name FROM houses ORDER BY id";
 	$result = mysqli_query($con,$sql);
-	$info = mysqli_fetch_all($result);
+	//$info = mysqli_fetch_all($result);
+	while($row = mysqli_fetch_assoc($result)) {
+		$info[] = $row;
+	}
+	
 	$length = count($info);
 ?>
 <!DOCTYPE html>
@@ -20,7 +24,7 @@
             <ul id="ul_page_selection" onmouseover="menu_select(event.target)" onmouseout="menu_leave(event.target)">
                 <li class="main-menu" id="AboutMe"><a href="aboutus.html">關於我</a></li>
                 <li class="main-menu current-page" id="houses"><a href="houses.php">豪宅導覽</li>
-                <li class="main-menu" id="LOGO"><a href="index.php">LOGO</a></li>
+                <li class="main-menu" id="home"><a href="index.php">首頁</a></li>
                 <li class="main-menu" id="Business"><a href="business.html">線上委託</a></li>
                 <li class="main-menu" id="ContactMe"><a href="contactme.html">聯絡我</a></li>
             </ul>
@@ -40,12 +44,12 @@
 	echo "<table>";
 	if(!$search){
 		for ($i=0;$i<$length;$i++){
-			echo "<tr><td><a href=\"house_info.php?id=".$info[$i][0]."\">".$info[$i][1]."</a></td></tr>";
+			echo "<tr><td><a href=\"house_info.php?id=".$info[$i]["id"]."\">".$info[$i]["name"]."</a></td></tr>";
 		}
 	}else{
 		for ( $i = 0; $i < $length; $i++){
-			if ( strpos($info[$i][1],$search) !== false){
-				echo "<tr><td><a href=\"house_info.php?id=".$info[$i][0]."\">".$info[$i][1]."</a></td></tr>";
+			if ( strpos($info[$i]["name"],$search) !== false){
+				echo "<tr><td><a href=\"house_info.php?id=".$info[$i]["id"]."\">".$info[$i]["name"]."</a></td></tr>";
 			}
 		}
 	}

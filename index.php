@@ -3,7 +3,10 @@
 
 	$sql = "SELECT id,name FROM houses WHERE hot='1' ORDER BY id";
 	$result = mysqli_query($con,$sql);
-	$info = mysqli_fetch_all($result);
+	//$info = mysqli_fetch_all($result);
+	while($row = mysqli_fetch_assoc($result)) {
+		$info[] = $row;
+	}	
 	$length = count($info);
 ?>
 <!DOCTYPE html>
@@ -56,15 +59,15 @@
 	echo "<table>";
 	for($i=0;$i<$length;$i++){
 		if(($i+1)%2){
-			echo "<tr><td><a class=\"left\" href=\"house_info.php?id=".$info[$i][0]."\">".$info[$i][1]."</a>";
-			if(file_exists("pic/houses/case-".$info[$i][0]."/pic1.jpg")){
-			echo "<img class=\"left\" src=\"pic/houses/case-".$info[$i][0]."/pic1.jpg\" />";
+			echo "<tr><td><a class=\"left\" href=\"house_info.php?id=".$info[$i]["id"]."\">".$info[$i]["name"]."</a>";
+			if(file_exists("pic/houses/case-".$info[$i]["id"]."/pic1.jpg")){
+			echo "<img class=\"left\" src=\"pic/houses/case-".$info[$i]["id"]."/pic1.jpg\" />";
 			}
 			echo "</td>";
 		}else{
-			echo "<td><a class=\"right\" href=\"house_info.php?id=".$info[$i][0]."\">".$info[$i][1]."</a>";
-			if(file_exists("pic/houses/case-".$info[$i][0]."/pic1.jpg")){
-			echo "<img class=\"right\" src=\"pic/houses/case-".$info[$i][0]."/pic1.jpg\" />";
+			echo "<td><a class=\"right\" href=\"house_info.php?id=".$info[$i]["id"]."\">".$info[$i]["name"]."</a>";
+			if(file_exists("pic/houses/case-".$info[$i]["id"]."/pic1.jpg")){
+			echo "<img class=\"right\" src=\"pic/houses/case-".$info[$i]["id"]."/pic1.jpg\" />";
 			}
 			echo "</td></tr>";
 		}

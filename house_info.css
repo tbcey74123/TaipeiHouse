@@ -1,11 +1,30 @@
-#info {
-	height: 450px;
+#left_part {
+	width: 600px;
+	height: 900px;
+	position: relative;
+	top: 20px;
+	left: 20px;
+	float: left;
+	background-color: white;
 }
+
+#house_picture {
+	width: 500px;
+	height: 300px;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+	top: 25px;
+}
+
+
 #house_info{
 	position: relative;
-    	color:red;
-   	font-size:20px;
-   	padding: 40px 0 0px 20px;
+    	color: red;
+   	font-size: 24px;
+	left: 50px;
+	top: 50px;
+	float: left;
 }
 
 #pic_div {
@@ -26,8 +45,10 @@
 }
 
 #thumbnail {
+	position: relative;
+	top: 60px;
 	height: 70px;
-	background-color:red ;
+	margin: 0 45px;
 }
 
 #thumbnail li{
@@ -41,3 +62,14 @@
 	height: 70px;
 	padding: 0;
 }
+
+#text-introduction {
+	width: 90%;
+	height: 300px;
+	background-color: blue;
+	position: relative;
+	top: 100px;
+	margin: 0 auto;
+}
+
+
