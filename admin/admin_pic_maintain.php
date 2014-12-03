@@ -53,7 +53,9 @@
 		<div id="pic_upload">
 			<form action="pic_upload.php" method="POST" enctype="multipart/form-data" onsubmit="return check_pic_upload();">
 				<div id="form">
+					<input type="hidden" name="target" value="house">
 					<input type="hidden" name="house_id" value="<?php echo $t_row[0] ;?>">
+					<input type="hidden">
 					<input type="file" name="pic1"><br/>
 					<input type="file" name="pic2"><br/>
 					<input type="file" name="pic3"><br/>
@@ -68,7 +70,7 @@
 	</div>
 	<div id="pic_display">
 		<div id="thumbnail">
-			<ul onclick="changePic_houses(event.target);">
+			<ul onclick="changePic_houses(event.target, 'house');">
 			<?php
 				$location = "../pic/houses/case-".$id."/";
 				$i = 1;

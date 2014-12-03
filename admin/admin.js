@@ -18,10 +18,10 @@ function check_pic_upload(){
 	var check = 0;
 	var string = /jpg/;
 	
-	if(form_input[0].value==""){
+	if(form_input[1].value==""){
 		return false;
 	}
-	for(var i=1;i<form_input.length-1;i++){
+	for(var i=3;i<form_input.length-1;i++){
 		if(form_input[i].value!=""){
 			check = 1;
 			break;
@@ -31,7 +31,7 @@ function check_pic_upload(){
 		return false;
 	}
 	
-	for(i=1;i<form_input.length-1;i++){
+	for(i=3;i<form_input.length-1;i++){
 		if(form_input[i].value!=""&&!string.test(form_input[i].value)){
 			alert("請上傳jpg檔");
 			return false;
@@ -48,8 +48,14 @@ function change_page (id) {
 	}
 }
 
-function change_deletePic(id,num){
-	location = "/admin/deletePic.php?id=" + id + "&num=" + num;
+function change_deletePic(id, num, tar){
+	if(tar == "mansion") {
+		var locate = window.location.href.split("location=")[1].split("&id")[0];
+
+		location = "deletePic.php?id=" + id + "&num=" + num + "&target=" + tar + "&location=" + locate;
+	}else 
+		location = "deletePic.php?id=" + id + "&num=" + num + "&target=" + tar;
+
 }
 
 function addC(){
@@ -69,17 +75,27 @@ function addC(){
 	form.appendChild(br);
 }
 
-function changePic_houses(e){
+function changePic_houses(e, tar){
 	if(e.nodeName == "IMG"){
 		var x = document.getElementById('pic');
 		var src = e.getAttribute("src");
 		var button = document.getElementById('delete');
 		var id = window.location.href.split("id=")[1].split("&&")[0];
-		var s = src.replace("/pic/houses/case-"+id+"/pic","");
+
+		if(tar == "house") {
+			var s = src.replace("../pic/houses/case-"+id+"/pic","");
+		}else {
+			var locate = window.location.href.split("location=")[1].split("&id")[0];
+			var s = src.replace("../pic/mansion/" + locate + "/mansion-" + id + "/pic", "");	
+		}
 		var num = s.split(".")[0];
 		
 		x.setAttribute('src',src);
-		button.setAttribute('onclick',"change_deletePic("+id+","+num+");");
+		if(tar == "house") {
+			button.setAttribute('onclick',"change_deletePic("+id+","+num+", 'house');");
+		}else {
+			button.setAttribute('onclick',"change_deletePic("+id+","+num+", 'mansion');");
+		}
 		button.style.display = "inline-block";
 	}
 

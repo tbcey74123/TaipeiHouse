@@ -33,24 +33,22 @@
 	<div id="left_part">
 		<div id="house_picture">
 <?php
-		/*$location = "pic/houses/case-".$id."/";
-		if(file_exists($location."pic1.jpg")) {
-			echo   "<img id=\"pic\" src=\"pic/houses/case-".$id."/pic1.jpg\" />";
-		}*/
+		$pic_dir = "pic/mansion/" . $location . "/mansion-" . $id . "/";
+		if(file_exists($pic_dir . "pic1.jpg"))
+			echo   "<img id=\"pic\" src=\"" . $pic_dir . "pic1.jpg\" />";
+		else
 			echo   "<img id=\"pic\" src=\"pic/alt_pic.png\">";
 ?>
 		</div>
 		<div id="thumbnail">
 			<ul onclick="changePic_houses(event.target);">
 <?php 
-	/*$i = 1;
+	$i = 1;
 	
-	while(file_exists($location."pic".$i.".jpg")){
-		echo "<li><img src='pic/houses/case-".$id."/pic".$i.".jpg' /></li>";
+	while(file_exists($pic_dir . "pic" . $i. ".jpg")){
+		echo "<li><img src=\"" . $pic_dir . "pic" . $i . ".jpg\"></li>";
 		$i++;
-	}*/
-    for($i = 0; $i < 3; $i++)
-		echo "<li><img src='pic/alt_pic.png'></li>";
+	}
 	    	
 ?>
 			</ul>	

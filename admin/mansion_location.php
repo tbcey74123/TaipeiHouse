@@ -25,12 +25,16 @@
 		if($input_result) {
 			$intro_target = "../mansion/intro/" . $location;
 			$profile_target = "../mansion/profile/" . $location;
+			$pic_dir = "../pic/mansion/" . $location;
 
 			if(!file_exists($intro_target)) {
 				mkdir($intro_target);
 			}
 			if(!file_exists($profile_target)) {
 				mkdir($profile_target);
+			}
+			if(!file_exists($pic_dir)) {
+				mkdir($pic_dir);
 			}
 
 			echo "加入成功！";

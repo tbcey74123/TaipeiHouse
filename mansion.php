@@ -56,7 +56,13 @@
 				$j = 1;
 				for ($i=0;$i<$length;$i++){
 					if($info[$i]["location"] == $a['location']) {
-						echo "<div class=\"mansion_unit\"><a href=\"mansion_info.php?location=" . $a['location'] . "&id=" . $info[$i]["mansion_id"] . "\"><img src=\"pic/alt_pic.png\"></a></div>";
+						$pic_dir = "pic/mansion/" . $info[$i]["location"] . "/mansion-" . $info[$i]["mansion_id"] . "/";
+						echo "<div class=\"mansion_unit\"><a href=\"mansion_info.php?location=" . $a['location'] . "&id=" . $info[$i]["mansion_id"] . "\"><img src=\"";
+						if(file_exists($pic_dir . "pic1.jpg"))
+							echo $pic_dir . "pic1.jpg";
+						else
+							echo "pic/alt_pic.png";
+						echo "\"></a></div>";
 						$j++;
 					}
 				}		

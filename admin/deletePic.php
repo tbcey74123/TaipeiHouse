@@ -4,7 +4,13 @@
 	
 	$id = $_GET['id'];
 	$num = $_GET['num'];
-	$path = "../pic/houses/case-".$id."/";
+	$tar = $_GET['target'];
+	$location = $_GET['location'];
+
+	if($tar == "house")
+		$path = "../pic/houses/case-".$id."/";
+	else 
+		$path = "../pic/mansion/" . $location . "/mansion-" . $id ."/";
 
 	if($id&&$num){
 		unlink($path."pic".$num.".jpg");
@@ -14,5 +20,10 @@
 			$num++;
 		}
 	}
-	header("Location:admin_pic_maintain.php?id=".$id);
+	if($tar) {
+		header("Location:admin_mansion_pic.php?location=" . $location . "&id=".$id);
+
+	}else {
+		header("Location:admin_pic_maintain.php?id=".$id);
+	}		
 ?>

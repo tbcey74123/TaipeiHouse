@@ -291,6 +291,7 @@ Bottom End*/
 }
 
 .mansion_unit img {
+	width: 266px;
 	height: 200px;
 	box-shadow:4px 4px 3px rgba(20%,20%,40%,0.5);
 }
