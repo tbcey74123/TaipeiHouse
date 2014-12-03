@@ -76,8 +76,7 @@ function detect_input(e, tar){
     if(inputCode==13 || inputCode==8 || inputCode==0)
 	    isValidKey = true;
     if(isValidKey) {
-    	    var num = input_num(e, tar);
-	    if(num != 1)
+	    if(!input_num(e, tar))
 		    isValidKey = false;
     }
     return isValidKey;
@@ -88,7 +87,6 @@ function input_num(e, tar) {
 	var isValidNum = false;
 	var input = document.getElementsByTagName('input');
 	var limit = 0;
-	var telORcel = false;
 
 	for(var i = 0; i < 4; i++) {
 		if(input[i].name == tar) {
@@ -98,7 +96,6 @@ function input_num(e, tar) {
 					break;
 				case "celphone":
 				case "telephone":
-					telORcel = true;
 					limit = 10;
 					break;
 				case "mail-address":
@@ -113,20 +110,8 @@ function input_num(e, tar) {
 			break;
 		}
 	}
-	
-	if(telORcel) {
-		if(isValidNum) {
-			return 1;
-		}else {
-			return 0;
-		}
-	}else {
-		if(isValidNum) {
-			e.returnValue = isValidNum;
-		}else {
-			e.returnValue = null;
-		}
-	}
+	return isValidNum;
+
 }
 
 
