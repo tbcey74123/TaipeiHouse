@@ -95,10 +95,20 @@ function delete_house(id) {
 		location = "delete_house.php?id=" + id;
 
 }
-function mansion_change(Location) {
+
+function location_change(Location) {
 	if(Location==""){
 		location = window.location.href.split("?")[0];
 	}else{
 		location = window.location.href.split("?")[0] + "?location=" + Location ;
 	}
+}
+function mansion_change(id) {
+
+	if(id==""){
+		location = window.location.href.split("?")[0];
+	}else{
+		location = window.location.href + "&id=" + id ;
+	}
+	
 }

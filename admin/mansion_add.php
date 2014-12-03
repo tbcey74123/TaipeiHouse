@@ -21,7 +21,7 @@
 
 
 	$location = $_POST['location'];
-	echo $location;
+
 	$profile_target = "../mansion/profile/" . $location . "/";
 	$intro_target = "../mansion/intro/" . $location . "/";
 	
@@ -40,7 +40,7 @@
 		
 		$name = fgets($file);
 
-		$sql = "INSERT INTO `mansion` (`id`, `name`, `location`) VALUES('$id', '$name', '$location')"; 
+		$sql = "INSERT INTO `mansion` (`mansion_id`, `name`, `location`) VALUES('$id', '$name', '$location')"; 
 
 		if(mysqli_query($con, $sql)) {
 		$p_target = $profile_target . "/mansion-" . $id;
