@@ -24,7 +24,7 @@
         <div id="div_page_selection">
             <ul id="ul_page_selection" onmouseover="menu_select(event.target)" onmouseout="menu_leave(event.target)">
 		<li class="main-menu" id="AboutMe"><a href="aboutus.html">關於我</a></li>
-		<li class="main-menu" id="houses"><a href="houses.php">豪宅導覽</a></li>
+		<li class="main-menu" id="mansion"><a href="mansion.php">豪宅導覽</a></li>
 		<li class="main-menu" id="Business"><a href="business.html">線上委託</a></li>
 		<li class="main-menu" id="ContactMe"><a href="contactme.html">聯絡我</a></li>
             </ul>
