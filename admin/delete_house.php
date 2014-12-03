@@ -10,13 +10,13 @@
 
 	$id = $_GET['id'];
 	
-	$sql = "DELETE FROM request WHERE id = '$id'";
+	$sql = "DELETE FROM houses WHERE id = '$id'";
 	$result = mysqli_query($con, $sql);
 	$row = mysqli_fetch_assoc($result);
 
 	if(mysqli_query($con, $sql)) {
 		echo "成功刪除！</br>";
-		echo "<a href=\"admin_request.php\">點我返回</a>";
+		echo "<a href=\"admin_update.php\">點我返回</a>";
 	}else {
 		echo "Something went wrong";
 	}

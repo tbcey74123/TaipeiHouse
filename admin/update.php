@@ -1,5 +1,13 @@
 <?php
 	require("../sql/mysql_connection.php");
+	require("session_setting.php");
+	
+	session_start();
+	if(!$_SESSION['login']) {
+		header("Location:../admin.php");
+		exit;
+	}
+
 	$id = $_POST['id'];
 	$name = $_POST['name'];
 	$address = $_POST['address'];

@@ -90,3 +90,15 @@ function delete_request(id) {
 		location = "delete_request.php?id=" + id;
 
 }
+function delete_house(id) {
+	if(confirm("確定要刪除這筆物件？"))
+		location = "delete_house.php?id=" + id;
+
+}
+function mansion_change(Location) {
+	if(Location==""){
+		location = window.location.href.split("?")[0];
+	}else{
+		location = window.location.href.split("?")[0] + "?location=" + Location ;
+	}
+}

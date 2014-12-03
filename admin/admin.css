@@ -70,3 +70,8 @@ table,td,tr{
 #delete{
 	display:none;
 }
+
+.notion {
+	font-size: 2em;
+	color: red;
+}

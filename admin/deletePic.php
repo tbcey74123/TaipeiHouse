@@ -1,4 +1,12 @@
 <?php
+	require("session_setting.php");
+	
+	session_start();
+	if(!$_SESSION['login']) {
+		header("Location:../admin.php");
+		exit;
+	}
+	
 	$id = $_GET['id'];
 	$num = $_GET['num'];
 	$path = "../pic/houses/case-".$id."/";

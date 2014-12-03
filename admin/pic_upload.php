@@ -1,5 +1,12 @@
 <?php
 	require("../sql/mysql_connection.php");
+	require("session_setting.php");
+
+	session_start();
+	if(!$_SESSION['login']) {
+		header("Location:../admin.php");
+		exit;
+	}
 
 	$check=0;
 	$error=0;

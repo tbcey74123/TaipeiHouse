@@ -37,7 +37,7 @@
 		}
 	?>
 	請選擇欲更改的物件名稱：<select onchange="change_page(event.target.value);">
-				<option value=""> 請選擇</option>
+				<option disabled="disabled" selected="seleted" value=""> 請選擇</option>
 	<?php
 		for($i=0;$i<$length;$i++){
 			if($row[$i]["id"]==$id){
@@ -66,6 +66,11 @@
 			      ?>
 			 <input type="submit" value="送出">
 			 </form>
+<?php
+		if($id) {
+			echo "<button onclick=\"delete_house(" . $id . ")\">刪除這筆物件</button>";
+		}
+?>
 		</div>
 
 	</div>
