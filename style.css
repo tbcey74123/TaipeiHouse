@@ -101,6 +101,7 @@ a{
 }
 
 #main {
+    width: 1200px;
     position: relative;
     //height: 1300px;
     margin:0 auto;
@@ -122,12 +123,6 @@ a{
      
 }
 
-#form {
-    position:relative;
-    font-size: 20px;
-    padding: 50px 0 0 212px;
-    margin: 0 auto;
-}
 select {
     text-align: center;
 }
@@ -141,51 +136,6 @@ select {
     position: relative;
     left:10px;
 }
-#house_list {
-    padding: 20px 0 0 30px;
-    font-size: 20px;
-}
-/*Hot start*/
-#hot {
-    width: 1100px;
-    font-size:20px;
-    padding-top:20px;
-    margin: 0 auto;
-}
-#hot a{
-    color: black;
-    font-size: 1.2em;
-}
-#hot tr{
-    border: 8px #eaeaea solid;
-}
-#hot td{
-/*    -moz-background-size: 275px 165px;
-    -webkit-background-size: 275px 165px;
-    -o-background-size: 275px 165px;
-    background-size: 275px 165px;*/
-
-    border-right: 90px #eaeaea solid;
-}
-
-.left, .right{
-	vertical-align: top;
-	float: left;
-}
-
-a.left,a.right{
-	position: relative;
-	top: 30px;
-	left: 4px;
-}
-
-#hot img{
-	display: inline;
-	width: 350px;
-	height: 210px;
-	border: 3px silver solid;
-}
-/*Hot End*/
 
 /*Bottom Start
 #bottom {
@@ -198,6 +148,7 @@ Bottom End*/
 #search_bar {
 	float: right;
 	position: relative;
+	display: none;
 }
 
 
@@ -238,19 +189,108 @@ Bottom End*/
 
 
 #form {
-	width: 500px;
+	width: 600px;
 	height: 600px;
 	position: relative;
 	top: 20px;
 	padding: 20px;
+	margin: 0 auto;
 	background-color: white;
+	font-size: 20px;
+}
+
+#content {
+	
+	width: 80%;
+	position: relative;
+	left: 30px;
+	background-color: white;
+	overflow: hidden;
+	box-shadow:4px 4px 3px rgba(20%,20%,40%,0.5);
+}
+
+/*css for house in frontpage.*/
+#hot {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.house_unit {
+	width: 1200px;
+	height: 300px; 
+	margin: 20px 0 20px 0;
+}
+.house_img {
+	width: 400px;
+	height: 300px;
+	float: left;
+}
+.house_img img {
+	height: 200px;
+	box-shadow:4px 4px 3px rgba(20%,20%,40%,0.5);
+}
+
+.house_intro {
+	width: 700px;
+	height: 200px;
+	background-color: white;
+	float: right;
+	box-shadow:4px 4px 3px rgba(20%,20%,40%,0.5);
+}
+.house_intro h1 {
+	font-size: 3em;
+	font-weight: bolder;
+	position: relative;
+	top: 20px;
+	left: 20px;
+}
+.intro_left, .intro_right {
+	position: relative;
+	top: 30px;
+	left: 70px;
+	float: left;
+}
+.intro_right {
+	left: 100px;
+}
+.house_intro p {
+	font-size: 2em;
+}
+
+
+
+/*css for mansion page.*/
+.location_unit {
+	height: 100px;
+	margin: 20px 0 0 0;
+	color: white;
+	font-size: 40px;
+	background-color: #206daa;
+	clear: both;
+	box-shadow:4px 4px 3px rgba(20%,20%,40%,0.5);
+}
+
+.location_unit:first-child {
+	margin: 0;
+}
+
+.location_unit h1 {
+	position: relative;
+	top: 30px;
+	left: 20px;
 }
 
 .mansion_unit {
-	width: 20%;
+	width: 25%;
 	height: 200px;
 	float: left;
+	padding: 10px 20px 20px 10px;
 }
-.mansion_unit_end {
-	clear: both;
+
+.mansion_unit img {
+	height: 200px;
+	box-shadow:4px 4px 3px rgba(20%,20%,40%,0.5);
+}
+.mansion_unit_end:after {
+	//clear: both;
 }

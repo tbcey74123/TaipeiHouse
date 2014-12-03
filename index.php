@@ -1,7 +1,7 @@
 <?php
 	require("sql/mysql_connection.php");
 
-	$sql = "SELECT id,name FROM houses WHERE hot='1' ORDER BY id";
+	$sql = "SELECT * FROM houses ORDER BY id";
 	$result = mysqli_query($con,$sql);
 	//$info = mysqli_fetch_all($result);
 	while($row = mysqli_fetch_assoc($result)) {
@@ -26,7 +26,6 @@
 		<li class="main-menu" id="AboutMe"><a href="aboutus.html">關於我</a></li>
 		<li class="main-menu" id="mansion"><a href="mansion.php">豪宅導覽</a></li>
 		<li class="main-menu" id="Business"><a href="business.html">線上委託</a></li>
-		<li class="main-menu" id="ContactMe"><a href="contactme.html">聯絡我</a></li>
             </ul>
         </div>
     </div>
@@ -47,18 +46,29 @@
 		</div>
 	     </div>
            </div> 
-	   <div id="hot">
 	     <div id="search_bar">
 		<form action="houses.php" method="GET" onsubmit="return check_search_input();">
 		    <input type="text" name="search">
 		    <input type="submit" value="查詢">
 		</form>
 	     </div>
+	   <div id="hot">
 <?php
-	echo "<p style=\"color:red\">熱門物件！！！</p>";
-	echo "<table>";
 	for($i=0;$i<$length;$i++){
-		if(($i+1)%2){
+		echo "<div class=\"house_unit\" id=\"house-" . $info[$i]['id'] . "\">";
+
+		echo "<div class=\"house_img\"><img src=\"pic/alt_pic.png\" ></div>";
+		echo "<div class=\"house_intro\">";
+		echo "<h1>" . $info[$i]["name"] . "</h1>";
+		echo "<div class=\"intro_left\">";
+		echo "<p>" . $info[$i]["structure"] . "</p>";
+		echo "<p>" . $info[$i]["location"] . "</p>";
+		echo "</div><div class=\"intro_right\">";
+		echo "<p>建物面積：" . $info[$i]["acreage"] . "平方公尺</p>";
+		echo "<p>地坪：" . $info[$i]["floor"] . "</p>";
+
+		echo "</div></div></div>";
+/*
 			echo "<tr><td><a class=\"left\" href=\"house_info.php?id=".$info[$i]["id"]."\">".$info[$i]["name"]."</a>";
 			if(file_exists("pic/houses/case-".$info[$i]["id"]."/pic1.jpg")){
 			echo "<img class=\"left\" src=\"pic/houses/case-".$info[$i]["id"]."/pic1.jpg\" />";
@@ -70,9 +80,8 @@
 			echo "<img class=\"right\" src=\"pic/houses/case-".$info[$i]["id"]."/pic1.jpg\" />";
 			}
 			echo "</td></tr>";
-		}
+		}*/
 	}
-	echo "</table>";
 ?>
               </div>
         
