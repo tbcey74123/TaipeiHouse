@@ -14,7 +14,7 @@
     <div id="right-side">
 	<div id="profile">
 		<div id="profile-pic">
-			<div id="img"><img src="pic/profile_image.jpg" width="360px" height="401px"></img></div>
+			<div id="img"><img src="pic/profile_image.jpg" width="360px" height="401px"></div>
 		</div>
 		<div class="profile-text">
 			<p>葉永誠 Peter</p>

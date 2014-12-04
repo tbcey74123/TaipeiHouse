@@ -29,7 +29,7 @@
 	
 	<div id="right-side">
 	  <div id="main">
-		<img src="pic/index_pic.png" width="1000px"></img>
+		<img src="pic/index_pic.png" width="1000px">
 <!--Disabled the Slide
              <div id="Slide">
             	<div id="pic_selector">
@@ -57,9 +57,13 @@
 	   <div id="hot">
 <?php
 	for($i=0;$i<$length;$i++){
+		$dir = "pic/houses/case-" . $info[$i]['id'] . "/";
 		echo "<div class=\"test_unit\" id=\"house-" . $info[$i]['id'] . "\">";
 		echo "<div class=\"mask\"></div>";
-		echo "<img src=\"pic/alt_pic.png\">";
+		if(file_exists($dir . "pic1.jpg"))
+			echo "<img src=\"" . $dir . "pic1.jpg\">";
+		else
+			echo "<img src=\"pic/alt_pic.png\">";
 		echo "<h1>" . $info[$i]['name'] . "</h1>";
 		echo "<div class=\"test_intro\">";
 		echo "<p>" . $info[$i]['location'] . "</p>";
