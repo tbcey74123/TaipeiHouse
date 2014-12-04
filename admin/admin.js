@@ -2,7 +2,7 @@ function check_input(){
 	var form_input = document.getElementsByTagName('input');
 	var form_select = document.getElementsByTagName('select');
 
-	for(var i=0;i<form_input.length;i++){
+	for(var i=0;i < 6;i++){
 		if(form_input[i].value==""){
 			return false;
 		}
@@ -58,8 +58,8 @@ function change_deletePic(id, num, tar){
 
 }
 
-function addC(){
-	var form = document.getElementById('form');
+function addC(name){
+	var form = document.getElementById(name);
 	var new_c = document.createElement("input");
 	var current = form.getElementsByTagName('input');
 	var num = current[current.length-1].getAttribute('name').replace("pic","");

@@ -1,15 +1,16 @@
 <?php
-	require("session_setting.php");
+	require_once("session_setting.php");
 	start_session();   //This function declared in 'session_setting.php'.
 
-	require("../sql/mysql_connection.php");
+	//require("../sql/mysql_connection.php");
 
 	$target = $_POST['target'];
 
 	$check=0;
 	$error=0;
 	
-	$id = $_POST["house_id"];
+	if(!$id)	
+		$id = $_POST["house_id"];
 
 	if($target == "house") 
 		$dir = "../pic/houses/case-".$id."/";
@@ -66,14 +67,16 @@
 	if($error){
 		echo "請上傳符合尺寸的圖片<br/>";
 	}else{
-		echo "上傳成功<br/>";
+		echo "圖片上傳成功<br/>";
 	}
-
-	if($target == "house")
-		echo "<a href=\"admin_pic_maintain.php?id=".$id.         "\">點此返回</a>";
-	else 
-		echo "<a href=\"admin_mansion_pic.php?location=" . $location . "&id=" . $id . "\">點此返回</a>";
-
+	
+	if($add != 1) {
+		if($target == "house") {
+			echo "<a href=\"admin_pic_maintain.php?id=".$id.         "\">點此返回</a>";
+		}else { 
+			echo "<a href=\"admin_mansion_pic.php?location=" . $location . "&id=" . $id . "\">點此返回</a>";
+		}
+	}
 ?>
 <head>
 <meta charset="utf-8">

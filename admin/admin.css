@@ -91,3 +91,7 @@ table,td,tr{
 	word-break: break-all;
 }
 
+
+#add_info, #add_pic{
+	float: left;
+}

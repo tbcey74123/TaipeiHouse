@@ -90,7 +90,7 @@
                         <button type="button" name="add_column"         onclick="addC();">新增欄位</button>
                         <input type="submit" value="送出">
                </form>
-               <p style="color:                                       red">圖片請上傳jpg檔，建議圖片長寬比3：5</p>
+               <p style="color:                                       red">圖片請上傳jpg檔，建議圖片長寬比3：5，大小請大於500 * 300</p>
         </div>
 	
 	</div>	

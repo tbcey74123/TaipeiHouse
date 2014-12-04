@@ -55,16 +55,15 @@
 				<div id="form">
 					<input type="hidden" name="target" value="house">
 					<input type="hidden" name="house_id" value="<?php echo $t_row[0] ;?>">
-					<input type="hidden">
 					<input type="file" name="pic1"><br/>
 					<input type="file" name="pic2"><br/>
 					<input type="file" name="pic3"><br/>
 				</div>				
 				<br/>
-				<button type="button" name="add_column" onclick="addC();">新增欄位</button>
+				<button type="button" name="add_column" onclick="addC('form');">新增欄位</button>
 				<input type="submit" value="送出">
 			 </form>
-			 <p style="color:red">圖片請上傳jpg檔，建議圖片長寬比3：5</p>
+			 <p style="color:red">圖片請上傳jpg檔，建議圖片長寬比3：5，大小請大於500 * 300</p>
 		</div>
 
 	</div>

@@ -78,6 +78,7 @@ a{
 }
 
 #left-side {
+	width: 12%;
     float: left;
     position: fixed;
     background-color: #206daa; 
@@ -92,7 +93,7 @@ a{
 }
 
 #right-side {
-	width: 1200px;
+	width: 86%;
 	height: 1200px;
 	position: relative;
 	left: 220px;
@@ -102,11 +103,11 @@ a{
 }
 
 #main {
-    width: 1200px;
+    width: 1000px;
     position: relative;
     //height: 1300px;
     margin:0 auto;
-    background-color: rgba(192,192,192,0.7);
+    //background-color: rgba(192,192,192,0.7);
     border-radius: 10px;
     //border: 1px solid white;
 }
@@ -156,30 +157,39 @@ Bottom End*/
 /*css For About Us page*/
 #profile {
 	height: 800px;
-	border-bottom: 2px double black;
+	//border-bottom: 2px double black;
 }
 
 
 #profile-pic {
 	width: 40%;
 	height: 600px;
-	background-color: black;
+	//background-color: black;
 	position: relative;
 	top: 10px;
 	left: 10px;
 	float: left;
 }
 
-#profile-text {
-	width: 50%;
-	height: 800px;
-	float: left;
-	padding-top: 10px;
-	padding-left: 50px;
+#img {
+	width: 360px;
+	height: 401px;
+	margin: 0 auto;
+	box-shadow:4px 4px 3px rgba(20%,20%,40%,0.5);
 }
-#profile-text p {
+
+.profile-text {
+	width: 50%;
+	float: left;
+	padding: 9px 23px;
+	margin: 10px 0 20px;
+	background-color: white;
+	box-shadow:4px 4px 3px rgba(20%,20%,40%,0.5);
+}
+.profile-text p {
 	font-size: 32px;
 	padding-bottom: 10px;
+	font-weight: bolder;
 }	
 
 #self-introduction {
@@ -212,8 +222,8 @@ Bottom End*/
 
 /*css for house in frontpage.*/
 #hot {
-	width: 1200px;
-	margin: 0 auto;
+	width: 1000px;
+	margin: 0 auto ;
 }
 
 .house_unit {
@@ -304,8 +314,10 @@ Bottom End*/
 	width: 30%;
 	height: 450px;
 	float: left;
+	position: relative;
+	top: 70px;
 	background-color: white;
-	margin: 10px 40px 10px 40px;
+	margin: 10px 60px 10px 100px;
 	box-shadow:4px 4px 3px rgba(20%,20%,40%,0.5);
 	-moz-user-select: none;
 	-webkit-user-select: none;

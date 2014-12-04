@@ -29,20 +29,24 @@
 	
 	<div id="right-side">
 	  <div id="main">
-             <div id="Slide" >
+		<img src="pic/index_pic.png" width="1000px"></img>
+<!--Disabled the Slide
+             <div id="Slide">
             	<div id="pic_selector">
               	    <ul onclick="changePic(event.target);">
                	 	<li id="pic1" class="current"><button type="button"></button></li>
                	 	<li id="pic2"><button type="button"></button></li>
                	 	<li id="pic3"><button type="button"></button></li>
                	 	<li id="pic4"><button type="button"></button></li>
-                    </ul>
+		    </ul>
+
             	</div>
 		<div id="Slide_prev" onclick="change_prev_pic();" onmouseover="show(event.target);" onmouseout="hide(event.target)">
 		</div>
 		<div id="Slide_next" onclick="change_next_pic();" onmouseover="show(event.target);" onmouseout="hide(event.target)">
 		</div>
 	     </div>
+-->
            </div> 
 	     <div id="search_bar">
 		<form action="houses.php" method="GET" onsubmit="return check_search_input();">
