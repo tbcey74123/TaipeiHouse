@@ -7,7 +7,7 @@
 	
 	$sql = "DELETE FROM houses WHERE id = '$id'";
 	$result = mysqli_query($con, $sql);
-	$row = mysqli_fetch_assoc($result);
+	//$row = mysqli_fetch_assoc($result);
 
 	if(mysqli_query($con, $sql)) {
 		echo "成功刪除！</br>";

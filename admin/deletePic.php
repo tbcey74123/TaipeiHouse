@@ -20,7 +20,7 @@
 			$num++;
 		}
 	}
-	if($tar) {
+	if($tar != "house") {
 		header("Location:admin_mansion_pic.php?location=" . $location . "&id=".$id);
 
 	}else {

@@ -21,7 +21,7 @@ function check_pic_upload(){
 	if(form_input[1].value==""){
 		return false;
 	}
-	for(var i=3;i<form_input.length-1;i++){
+	for(var i=2;i<form_input.length-1;i++){
 		if(form_input[i].value!=""){
 			check = 1;
 			break;
