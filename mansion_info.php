@@ -22,7 +22,7 @@
     <link rel="stylesheet" type="text/css" href="single_house.css">
     <script type="text/javascript" src="script/main.js"></script>
 </head>
-<body>
+<body onload="set_position();" onresize="set_position();">
 <!--
     <div id="left-side">
         <div id="div_page_selection">

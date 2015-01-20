@@ -1,10 +1,19 @@
-$(document).ready(function() {
-	var height = document.body.clientHeight;
+function set_position() {
+	var width = document.body.clientWidth;
+	var left = document.getElementById('left_part');
+	var right = document.getElementById('right_part');
+	
+	if(width <= 1500) {
+		left.style.float = "none";
+		right.style.float = "none";
+		right.style.left = "0";
+	}else {
+		left.style.float = "left";
+		right.style.float = "left";
+		right.style.left = "50px";
+	}
 
-	//$('#left-side').css("height",height);
-
-
-});
+}
 
 
 
