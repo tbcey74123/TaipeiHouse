@@ -44,6 +44,7 @@
 			}
 			rmdir($traffic_target);
 		}
+		rmdir("../mansion/" . $location);
 
 		$pic_target= "../pic/mansion/" . $location . "/";
 
