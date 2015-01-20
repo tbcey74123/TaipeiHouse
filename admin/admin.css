@@ -78,19 +78,26 @@ table,td,tr{
 
 #mansion_profile {
 	width: 500px;
-	height: 300px;
+	height: 100px;
 	border: 4px double black;
 	word-break: break-all;
 }
-#mansion_intro {
+#mansion_infor {
 	width: 500px;
-	height: 400px;
+	height: 300px;
 	border: 2px solid black;
+	margin-top: 20px;
 	position: relative;
-	top: 50px;
 	word-break: break-all;
 }
-
+#mansion_traffic {
+	width: 500px;
+	height: 200px;
+	position: relative;
+	margin-top: 20px;
+	border: 1px solid red;
+	word-break: break-all;
+}
 
 #add_info, #add_pic{
 	float: left;

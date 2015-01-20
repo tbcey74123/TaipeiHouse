@@ -30,7 +30,7 @@
 				<input type="submit" value="查詢">
 			</form>
 		</div>
-	<div id="content">
+	<div class="shadow" id="content">
 	<div id="house_list">
 <?php
 	$search = $_GET['search'];
@@ -45,12 +45,12 @@
 	if(!$search){
 	   	if($Default) {
 			foreach($Default as $a) {
-				echo "<div class=\"location_unit\"><h1>" . $a['Chinese_name'] . "</h1></div>";
+				echo "<div class=\"location_unit shadow\"><h1>" . $a['Chinese_name'] . "</h1></div>";
 				$j = 1;
 				for ($i=0;$i<$length;$i++){
 					if($info[$i]["location"] == $a['location']) {
 						$pic_dir = "pic/mansion/" . $info[$i]["location"] . "/mansion-" . $info[$i]["mansion_id"] . "/";
-						echo "<div class=\"mansion_unit\"><a href=\"mansion_info.php?location=" . $a['location'] . "&id=" . $info[$i]["mansion_id"] . "\"><img src=\"";
+						echo "<div class=\"mansion_unit\"><a href=\"mansion_info.php?location=" . $a['location'] . "&id=" . $info[$i]["mansion_id"] . "\"><img class=\"shadow\" src=\"";
 						if(file_exists($pic_dir . "pic1.jpg"))
 							echo $pic_dir . "pic1.jpg";
 						else
@@ -68,9 +68,9 @@
 				if(!($j % 5))
 					echo "<div class=\"mansion_unit mansion_unit_end\">";
 				else
-					echo "<div class=\"mansion_unit\">";
+					echo "<div class=\"mansion_unit shadow\">";
 
-				echo "<a href=\"mansion_info.php?location=" . $a . "&id=" . $info[$i]["mansion_id"] . "\"><img src=\"pic/alt_pic.png\"></a></div>";
+				echo "<a href=\"mansion_info.php?location=" . $a . "&id=" . $info[$i]["mansion_id"] . "\"><img class=\"shadow\" src=\"pic/alt_pic.png\"></a></div>";
 				$j++;
 			}
 		}

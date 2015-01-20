@@ -1,3 +1,11 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<body>
+</html>
 <?php
 	require("session_setting.php");
 	start_session();   //This function declared in 'session_setting.php'.
@@ -10,16 +18,20 @@
 
 	$location = $_POST['location'];
 
-	$profile_target = "../mansion/profile/" . $location . "/";
-	$intro_target = "../mansion/intro/" . $location . "/";
-	
-	if(!file_exists($profile_target)) {
-		mkdir($profile_target);
-	}
-	if(!file_exists($intro_target)) {
-		mkdir($intro_target);
-	}
+	$target = "../mansion/" . $location . "/";
+//	if(!file_exists($target)) {
+//		mkdir($target);
+//	}
+	$profile_target = $target . "profile";
+	$infor_target = $target . "infor";
+	$traffic_target = $target . "traffic";
 
+	if(!file_exists($profile_target))
+		mkdir($profile_target);
+	if(!file_exists($infor_target))
+		mkdir($infor_target);
+	if(!file_exists($traffic_target))
+		mkdir($traffic_target);
 
 	fgets($file);
 	while(!feof($file)) {
@@ -27,21 +39,25 @@
 		fgets($file);
 		
 		$name = fgets($file);
-
 		$sql = "INSERT INTO `mansion` (`mansion_id`, `name`, `location`) VALUES('$id', '$name', '$location')"; 
 
 		if(mysqli_query($con, $sql)) {
 			$p_target = $profile_target . "/mansion-" . $id;
-			$i_target = $intro_target . "/mansion-" . $id;
+			$i_target = $infor_target . "/mansion-" . $id;
+			$t_target = $traffic_target . "/mansion-" . $id;
 			
-				
 			$profile = fopen($p_target, "w") or die("無法開啟文件"); 
 			fwrite($profile, fgets($file));
 			fclose($profile);
 
-			$intro = fopen($i_target, "w") or die("無法開啟文件");
-			fwrite($intro, fgets($file));
-			fclose($intro);
+			$infor = fopen($i_target, "w") or die("無法開啟文件");
+			fwrite($infor, fgets($file));
+			fclose($infor);
+
+			$traffic = fopen($t_target, "w") or die("無法開啟文件");
+			fwrite($traffic, fgets($file));
+			fclose($traffic);
+
 			echo $name . "資料匯入成功<br/>";
 		}
 	}
@@ -49,11 +65,3 @@
 	echo "匯入結束<br/>";
 	echo "<a href=\"admin_mansion_add.php\">點此返回</a>";
 ?>
-<!DOCTYPE>
-<html>
-<head>
-<meta charset="utf-8">
-</head>
-<body>
-<body>
-</html>

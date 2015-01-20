@@ -40,7 +40,7 @@
 		</form>
 		<h1 class="notion">注意：匯入格式需注意以下幾點</h1>
 		<h2 class="notion">1.文件開頭需空一行</h2>
-		<h2 class="notion">2.資料依序為：編號、豪宅名稱、基本資料、豪宅介紹</h2>
+		<h2 class="notion">2.資料依序為：編號、豪宅名稱、基本資料、社區特色、交通位置</h2>
 		<h2 class="notion">3.編號從1開始，不同區域的編號請分開計算</h2>
 		<h2 class="notion">4.文件尾端不要留空白行！！</h2>
 		<img src="sample_input.png">

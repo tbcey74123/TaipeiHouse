@@ -29,7 +29,7 @@
 	
 	<div id="right-side">
 	  <div id="main">
-		<img src="pic/index_pic.png" width="1000px">
+		<img class="shadow" src="pic/index_pic.png" width="1000px">
 <!--Disabled the Slide
              <div id="Slide">
             	<div id="pic_selector">
@@ -58,8 +58,8 @@
 <?php
 	for($i=0;$i<$length;$i++){
 		$dir = "pic/houses/case-" . $info[$i]['id'] . "/";
-		echo "<div class=\"test_unit\" id=\"house-" . $info[$i]['id'] . "\">";
-		echo "<div class=\"mask\"></div>";
+		echo "<div class=\"test_unit shadow\" id=\"house-" . $info[$i]['id'] . "\">";
+//		echo "<div class=\"mask\"></div>";
 		if(file_exists($dir . "pic1.jpg"))
 			echo "<img src=\"" . $dir . "pic1.jpg\">";
 		else
@@ -71,7 +71,9 @@
 		echo "<p>" . $info[$i]["acreage"] . "平方公尺</p>";
 		echo "<p>" . $info[$i]["floor"] . "坪</p>";
 		
-		echo "</div></div>";
+		echo "</div>";
+		echo "<a class=\"order_button\" href=\"business.php?type=house&name=" . $info[$i]['name'] . "\"><button>立即委託</button></a>";
+		echo "</div>";
 		/*echo "<div class=\"house_unit\" id=\"house-" . $info[$i]['id'] . "\">";
 
 		echo "<div class=\"house_img\"><img src=\"pic/alt_pic.png\" ></div>";

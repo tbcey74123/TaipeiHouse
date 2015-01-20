@@ -8,6 +8,10 @@
     }
     require("sql/mysql_connection.php");
     require("left_side.php");
+
+    	$sql = "SELECT name FROM mansion WHERE mansion_id = $id AND location = '$location'"; 
+    	$result = mysqli_query($con, $sql);
+	$row = mysqli_fetch_assoc($result)
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,7 +39,7 @@
 	output_leftside();
 ?>
     <div id="right-side">
-	<div id="left_part">
+	<div class="shadow" id="left_part">
 		<div id="house_picture">
 <?php
 		$pic_dir = "pic/mansion/" . $location . "/mansion-" . $id . "/";
@@ -60,7 +64,7 @@
 		</div>
 		<div id="mansion_profile">
 <?php
-    	$profile = "mansion/profile/" . $location . "/mansion-" . $id;
+    	$profile = "mansion/" . $location . "/profile/mansion-" . $id;
 	
     	$pro_file = fopen($profile, "r");
 	while(!feof($pro_file)) {
@@ -72,18 +76,39 @@
 	}
 	fclose($pro_file);
 
+	echo "</div>";
+	
+	echo "<a class=\"order_button\" href=\"business.php?type=mansion&name=" . $row['name'] . "\"><button>立即委託</button></a>";
+		
+	echo "</div>";
 ?>
-		</div>
-	</div>
 	<div id="right_part">
+		<div class="shadow" id="infor">
+			<h1 class="title">社區特色</h1>
+			<p>
 <?php
-	$intro = "mansion/intro/" . $location . "/mansion-" . $id;
+	$infor = "mansion/" . $location . "/infor/mansion-" . $id;
 
-	$intro_file = fopen($intro, "r");
-	echo fgets($intro_file);
+	$infor_file = fopen($infor, "r");
+	echo fgets($infor_file);
 
-	fclose($intro_file);
+	fclose($infor_file);
+?>		
+			</p>
+		</div>
+		<div class="shadow" id="traffic">
+			<h1 class="title">交通位置</h1>
+			<p>
+<?php
+	$traffic = "mansion/" . $location . "/traffic/mansion-" . $id;
+
+	$traffic_file = fopen($traffic, "r");
+	echo fgets($traffic_file);
+
+	fclose($traffic_file);
 ?>
+			</p>
+		</div>
 	</div>
 	<div id="bottom">
 	</div>

@@ -71,9 +71,10 @@
 	echo "</select><br/>";
 	
 	if($location && $id) { 	
-		$profile_target = "../mansion/profile/" . $location . "/mansion-" . $id;
-		$intro_target = "../mansion/intro/" . $location . "/mansion-" . $id;
-		
+		$profile_target = "../mansion/" . $location . "/profile/mansion-" . $id;
+		$infor_target = "../mansion/" . $location . "/infor/mansion-" . $id;
+		$traffic_target = "../mansion/" . $location. "/traffic/mansion-" . $id;
+
 		echo "<div id=\"mansion_profile\"><p>";
 		
 		$profile = fopen($profile_target, "r");
@@ -81,11 +82,19 @@
 		fclose($profile);
 
 		echo "</p></div>";
-		echo "<div id=\"mansion_intro\"><p>";
+		echo "<div id=\"mansion_infor\"><p>";
 
-		$intro = fopen($intro_target, "r");
-		echo fgets($intro);
-		fclose($intro);
+		$infor = fopen($infor_target, "r");
+		echo fgets($infor);
+		fclose($infor);
+		
+		echo "</p></div>";
+
+		echo "<div id=\"mansion_traffic\"><p>";
+
+		$traffic = fopen($traffic_target, "r");
+		echo fgets($traffic);
+		fclose($traffic);
 
 		echo "</p></div>";
 	}

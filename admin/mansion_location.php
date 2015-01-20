@@ -23,8 +23,8 @@
 		$input_result = mysqli_query($con, $input_sql);
 
 		if($input_result) {
-			$intro_target = "../mansion/intro/" . $location;
-			$profile_target = "../mansion/profile/" . $location;
+			$intro_target = "../mansion/" . $location;
+			$profile_target = "../mansion/" . $location;
 			$pic_dir = "../pic/mansion/" . $location;
 
 			if(!file_exists($intro_target)) {

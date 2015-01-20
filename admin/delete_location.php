@@ -12,7 +12,7 @@
 	$result = mysqli_query($con, $sql);
 
 	if($Lresult && $result) {
-		$intro_target = "../mansion/intro/" . $location . "/";
+		$intro_target = "../mansion/" . $location . "/intro/";
 		if(file_exists($intro_target)) {
 			$objs = scandir($intro_target);
 			
@@ -23,7 +23,7 @@
 			rmdir($intro_target);
 		}
 
-		$pro_target= "../mansion/profile/" . $location . "/";
+		$pro_target= "../mansion/" . $location . "/profile/";
 		if(file_exists($pro_target)) {
 			$objs = scandir($pro_target);
 			
@@ -34,6 +34,16 @@
 			rmdir($pro_target);
 		}
 		
+		$traffic_target= "../mansion/" . $location . "/traffic/";
+		if(file_exists($traffic_target)) {
+			$objs = scandir($traffic_target);
+			
+			foreach($objs as $obj) {
+				if($obj != "." && $obj !="..")
+					unlink($traffic_target . $obj);
+			}
+			rmdir($traffic_target);
+		}
 
 		echo "刪除成功！<br/>";
 	}else {
