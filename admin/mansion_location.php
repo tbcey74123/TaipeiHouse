@@ -23,15 +23,11 @@
 		$input_result = mysqli_query($con, $input_sql);
 
 		if($input_result) {
-			$intro_target = "../mansion/" . $location;
-			$profile_target = "../mansion/" . $location;
+			$target = "../mansion/" . $location;
 			$pic_dir = "../pic/mansion/" . $location;
 
-			if(!file_exists($intro_target)) {
-				mkdir($intro_target);
-			}
-			if(!file_exists($profile_target)) {
-				mkdir($profile_target);
+			if(!file_exists($target)) {
+				mkdir($target);
 			}
 			if(!file_exists($pic_dir)) {
 				mkdir($pic_dir);
