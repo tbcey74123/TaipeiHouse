@@ -12,15 +12,15 @@
 	$result = mysqli_query($con, $sql);
 
 	if($Lresult && $result) {
-		$intro_target = "../mansion/" . $location . "/intro/";
-		if(file_exists($intro_target)) {
-			$objs = scandir($intro_target);
+		$infor_target = "../mansion/" . $location . "/infor/";
+		if(file_exists($infor_target)) {
+			$objs = scandir($infor_target);
 			
 			foreach($objs as $obj) {
 				if($obj != "." && $obj !="..")
-					unlink($intro_target . $obj);
+					unlink($infor_target . $obj);
 			}
-			rmdir($intro_target);
+			rmdir($infor_target);
 		}
 
 		$pro_target= "../mansion/" . $location . "/profile/";
@@ -43,6 +43,24 @@
 					unlink($traffic_target . $obj);
 			}
 			rmdir($traffic_target);
+		}
+
+		$pic_target= "../pic/mansion/" . $location . "/";
+
+		if(file_exists($pic_target)) {
+
+			$objs = scandir($pic_target);
+			foreach($objs as $obj) {
+				if($obj != "." && $obj !="..") {
+					$pics = scandir($pic_target . $obj);
+			
+					foreach($pics as $pic)
+						if($pic != "." && $pic != "..")
+							unlink($pic_target . $obj . "/" . $pic);
+				}
+				rmdir($pic_target . $obj);
+			}
+			rmdir($pic_target);
 		}
 
 		echo "刪除成功！<br/>";
