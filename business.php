@@ -19,7 +19,7 @@
         
         <div class="shadow" id="form">
             <p>委託人資料</p><br/>
-            <form action="request.php" method="GET" onsubmit="return check_input();">
+            <form action="request.php" method="POST" onsubmit="return check_input();">
                 請選擇委託項目：<select name="type">
                                 <option value="space" disabled="disabled" selected="selected">請選擇</option>
                                 <option value="a">買屋</option>
