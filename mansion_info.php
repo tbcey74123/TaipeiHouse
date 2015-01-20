@@ -68,11 +68,13 @@
 	
     	$pro_file = fopen($profile, "r");
 	while(!feof($pro_file)) {
-		$tmp = fgetc($pro_file);
-		if($tmp != ",")
-			echo $tmp;
-		else 
-			echo "<br/>";
+		$tmp1 = fgets($pro_file);
+		$tmp1 = explode("，", $tmp1);	
+		foreach($tmp1 as $tmp2) {
+			$tmp2 = explode(",", $tmp2);
+			foreach($tmp2 as $output)
+				echo $output . "<br>";
+		}
 	}
 	fclose($pro_file);
 
