@@ -43,6 +43,7 @@
 		<h2 class="notion">2.資料依序為：編號、豪宅名稱、基本資料、社區特色、交通位置</h2>
 		<h2 class="notion">3.編號從1開始，不同區域的編號請分開計算</h2>
 		<h2 class="notion">4.文件尾端不要留空白行！！</h2>
+		<h2 class="notion">5.使用重複的編號會覆蓋掉原本的豪宅</h2>
 		<img src="sample_input.png">
 	</div>
 </body>

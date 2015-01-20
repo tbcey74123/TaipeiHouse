@@ -68,12 +68,17 @@
 			echo "<option value=\"" . $mansion['mansion_id'] . "\">" . $mansion['name'] . "</option>";
 		}
 	}
-	echo "</select><br/>";
+	echo "</select>";
 	
 	if($location && $id) { 	
 		$profile_target = "../mansion/" . $location . "/profile/mansion-" . $id;
 		$infor_target = "../mansion/" . $location . "/infor/mansion-" . $id;
 		$traffic_target = "../mansion/" . $location. "/traffic/mansion-" . $id;
+		
+		echo "<form action=\"delete_mansion.php\" method=\"POST\" onsubmit=\"return check_delete_mansion();\">";
+		echo "<input type=\"hidden\" name=\"location\" value=\"" . $location . "\">";
+		echo "<input type=\"hidden\" name=\"id\" value=\"" . $id . "\">";
+		echo "<input type=\"submit\" value=\"刪除這個豪宅\"></form>";
 
 		echo "<div id=\"mansion_profile\"><p>";
 		

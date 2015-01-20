@@ -131,3 +131,8 @@ function mansion_change(id) {
 	}
 	
 }
+
+function check_delete_mansion() {
+	
+	return confirm("確定要刪除這個豪宅？");
+}

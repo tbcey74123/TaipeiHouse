@@ -7,6 +7,7 @@
 <body>
 </html>
 <?php
+	require("delete_mansion_func.php");
 	require("session_setting.php");
 	start_session();   //This function declared in 'session_setting.php'.
 
@@ -37,6 +38,11 @@
 	while(!feof($file)) {
 		$id =  fgetc($file);
 		fgets($file);
+
+		$Check_sql = "SELECT * FROM mansion WHERE mansion_id = $id AND location = '$location'";
+		if(mysqli_query($con, $Check_sql)) {
+			delete_mansion($id, $location, $con);
+		}
 		
 		$name = fgets($file);
 		$sql = "INSERT INTO `mansion` (`mansion_id`, `name`, `location`) VALUES('$id', '$name', '$location')"; 
