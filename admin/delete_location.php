@@ -57,8 +57,8 @@
 					foreach($pics as $pic)
 						if($pic != "." && $pic != "..")
 							unlink($pic_target . $obj . "/" . $pic);
-				}
 				rmdir($pic_target . $obj);
+				}
 			}
 			rmdir($pic_target);
 		}
